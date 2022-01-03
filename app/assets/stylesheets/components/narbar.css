@@ -2,8 +2,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: aqua;
+    background-image: url(https://www.cyanmarketing.co.uk/wp-content/uploads/2013/10/gradient-header.jpg);
     width: 100%;
+    /* z-index: 1 */
+    position: sticky;
 }
 .nav-bar__inner__right {
     display: flex;
