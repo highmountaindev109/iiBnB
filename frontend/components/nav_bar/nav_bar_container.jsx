@@ -3,9 +3,11 @@ import { connect } from "react-redux";
 import NavBar from './nav_bar'
 import { logout } from "../../actions/session_actions";
 
-const mSTP = state => ({
-    currentUser: state.entities[state.session.id]
-})
+const mSTP = ({ session, entities: { users } }) => {
+    return {
+        currentUser: users[session.id]
+    };
+};
 
 const mDTP = dispatch => ({
     logout: () => dispatch(logout()),

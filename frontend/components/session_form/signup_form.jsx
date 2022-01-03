@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class SessionForm extends React.Component {
+class SignUpForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             email: '',
             password: '',
             first_name: '',
-            last_name: ''
+            last_name: '',
+            bio: '',
         };
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     updateEmail(e) {
@@ -26,6 +28,9 @@ class SessionForm extends React.Component {
     updateLastName(e) {
         return e => this.setState({ last_name: e.target.value })
     }
+    updateBio(e) {
+        return e => this.setState({ bio: e.target.value })
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -34,11 +39,22 @@ class SessionForm extends React.Component {
     }
 
     links() {
-        if (this.props.formType === "Log In") {
-            return <Link to="/signup"> Sign Up Here! </Link>
-        } else {
-            return <Link to="/login"> Log In Here! </Link>
-        }
+            return (
+            <div>
+                <Link to="/login"> Log in instead </Link>
+                <br/>
+                <button onClick={this.handleDemo}>Use a demo account instead</button>
+            </div>
+            )
+    }
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demoUser = {
+            email: "User@Fake.com", password: "123456"
+        };
+
+        this.props.login(demoUser);
     }
 
     displayErrors() {
@@ -54,7 +70,7 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="_forms">
                 <h3> {this.links()} </h3>
                 <form onSubmit={this.handleSubmit}>
                     <h1>{this.props.formType}</h1>
@@ -87,6 +103,14 @@ class SessionForm extends React.Component {
                             onChange={this.updatePassword()}
                         />
                     </label>
+                    <br />
+                    <label> Tell us about yourself: {" "}
+                    <br />
+                        <textarea
+                            value={this.state.bio}
+                            onChange={this.updateBio()}
+                        />
+                    </label>
                     {"      "}
                     <button type="submit">{this.props.formType}</button>
                 </form>
@@ -96,4 +120,4 @@ class SessionForm extends React.Component {
 
 }
 
-export default SessionForm
+export default SignUpForm

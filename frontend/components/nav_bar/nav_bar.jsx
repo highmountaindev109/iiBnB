@@ -5,20 +5,22 @@ import { FaRegUserCircle,FaSearch, FaGlobe } from "react-icons/fa/index"
 const NavBar = ({ currentUser, logout }) => {
     const display = currentUser ? (
         <div> 
-            <p> Hello, {currentUser.id} </p>
+            <p> Hello, {currentUser.first_name} {currentUser.last_name} </p>
             <button onClick={logout}> Logout </button>
         </div>
     ) : (
         <div>
             <Link to={"/signup"}>Sign Up</Link>
-            <Link to={"/login"}>Log In</Link>
+            {/* <Link to={"/login"}>Log In</Link> */}
         </div>
     )
 
     return (
         <header className="nav-bar">
             <div className="nav-bar__left">
-                <h2> iiBnB </h2>
+                <h2>
+                    <Link to={"/"}> iiBnB </Link> 
+                </h2>
             </div>
 
             <div className="nav-bar__middle">
