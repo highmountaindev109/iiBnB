@@ -23,15 +23,14 @@ class LogInForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal)
+
     }
 
     links() {
             return (
                 <div>
-                    <Link to="/signup"> Sign up for a new account here! </Link>
-                    <br/>
-                    <button onClick={this.handleDemo}>Use a demo account instead</button>
+                    <button className="session-button" id="demo1" onClick={this.handleDemo}>Use a demo account instead</button>
                 </div>
             )
     }
@@ -42,7 +41,7 @@ class LogInForm extends React.Component {
             email: "User@Fake.com", password: "123456"
         };
 
-        this.props.processForm(demoUser);
+        this.props.processForm(demoUser).then(this.props.closeModal());
     }
 
     displayErrors() {
@@ -58,32 +57,33 @@ class LogInForm extends React.Component {
 
     render() {
         return (
-            <div className="_forms">
-                <h3> {this.links()} </h3>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>{this.props.formType}</h1>
+            <div className="forms-container">
+                <form className="session-form" onSubmit={this.handleSubmit}>
+                    <h2> Welcome back to iiBnB!</h2>
                     <h3> {this.displayErrors()} </h3>
-                    <label> Email: {"  "}
                         <input
+                            id="signin-email"
+                            className="session-input"
                             type="text"
                             value={this.state.email}
                             onChange={this.updateEmail()}
+                            placeholder="Email"
                         />
-                    </label>
-                    <label> Password: {"  "}
                         <input
+                            id="signin-password"
+                            className="session-input"
                             type="password"
                             value={this.state.password}
                             onChange={this.updatePassword()}
+                            placeholder="Password"
                         />
-                    </label>
-                    {"      "}
-                    <button type="submit">{this.props.formType}</button>
+                    <button className="session-button" id="submit1" type="submit">{this.props.formType}</button>
+                    <h3> {this.links()} </h3>
                 </form>
             </div>
         )
     }
-
+    
 }
 
 export default LogInForm

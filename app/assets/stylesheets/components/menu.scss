@@ -1,0 +1,29 @@
+#menu{
+    background-color: white;
+    border-radius: 5px;
+    border: black 2px solid;
+    cursor: pointer;
+    width: 1vw;
+    z-index: 5;
+    height: 4vh;
+    display: inline-block;
+    justify-content: center;
+    align-content: center;
+}
+
+#menu-container{ 
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    z-index: 6;
+    position: absolute;
+    width: 6vw;
+    justify-content: stretch;
+}
+
+#menu-item {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}

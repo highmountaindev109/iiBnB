@@ -1,20 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaRegUserCircle,FaSearch, FaGlobe } from "react-icons/fa/index"
+import { openModal } from "../../actions/modal_action";
+import MenuContainer from "../menu/menu_container";
 
 const NavBar = ({ currentUser, logout }) => {
-    const display = currentUser ? (
-        <div> 
-            <p> Hello, {currentUser.first_name} {currentUser.last_name} </p>
-            <button onClick={logout}> Logout </button>
-        </div>
-    ) : (
-        <div>
-            <Link to={"/signup"}>Sign Up</Link>
-            {/* <Link to={"/login"}>Log In</Link> */}
-        </div>
-    )
-
     return (
         <header className="nav-bar">
             <div className="nav-bar__left">
@@ -28,12 +18,8 @@ const NavBar = ({ currentUser, logout }) => {
                 <FaSearch/>
             </div>
             <div className="nav-bar__right">
-                Become a Host
-                <FaGlobe/>
-                {display}
-                <div className="nav-bar__inner__right">
-                <FaRegUserCircle/>
-                </div>
+                <button>Become a Host</button>
+                <MenuContainer/>
             </div>
         </header>
     )

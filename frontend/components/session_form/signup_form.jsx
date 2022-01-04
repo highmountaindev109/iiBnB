@@ -35,15 +35,15 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     links() {
             return (
             <div>
-                <Link to="/login"> Log in instead </Link>
-                <br/>
-                <button onClick={this.handleDemo}>Use a demo account instead</button>
+                {/* <Link to="/login"> Log in instead </Link> */}
+                {/* <br/> */}
+                <button className="session-button" id="demo1" onClick={this.handleDemo}>Use a demo account instead</button>
             </div>
             )
     }
@@ -53,8 +53,8 @@ class SignUpForm extends React.Component {
         const demoUser = {
             email: "User@Fake.com", password: "123456"
         };
-
-        this.props.login(demoUser);
+        this.props.login(demoUser)
+        .then(this.props.closeModal());
     }
 
     displayErrors() {
@@ -70,49 +70,57 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-            <div className="_forms">
-                <h3> {this.links()} </h3>
-                <form onSubmit={this.handleSubmit}>
-                    <h1>{this.props.formType}</h1>
+            
+            <div className="forms-container">
+                <form onSubmit={this.handleSubmit} className="session-form">
+                    <h2> Sign up for iiBnB! </h2>
                     <h3> {this.displayErrors()} </h3>
-                    <label> Email: {"  "}
                         <input
+                            id="email"
+                            className="session-input"
                             type="text"
                             value={this.state.email}
                             onChange={this.updateEmail()}
+                            placeholder="Email"
+                            required
                         />
-                    </label>
-                    <label> First Name: {"  "}
                         <input
+                            id="fname"
+                            className="session-input"
                             type="text"
                             value={this.state.first_name}
                             onChange={this.updateFirstName()}
+                            placeholder="First Name"
+                            required
                         />
-                    </label>
-                    <label> Last Name: {"  "}
                         <input
+                            id='lname'
+                            className="session-input" 
                             type="text"
                             value={this.state.last_name}
                             onChange={this.updateLastName()}
+                            placeholder="Last Name"
+                            required
                         />
-                    </label>
-                    <label> Password: {"  "}
                         <input
+                            id="password"
+                            className="session-input"
                             type="password"
                             value={this.state.password}
                             onChange={this.updatePassword()}
+                            placeholder="Password"
+                            required
                         />
-                    </label>
-                    <br />
-                    <label> Tell us about yourself: {" "}
-                    <br />
                         <textarea
+                            id="bio"
+                            className="session-input"
                             value={this.state.bio}
                             onChange={this.updateBio()}
+                            placeholder="Tell us about yourself!"
                         />
-                    </label>
                     {"      "}
-                    <button type="submit">{this.props.formType}</button>
+                    <button className="session-button" id="submit1" type="submit">{this.props.formType}</button>
+                    <h3> {this.links()} </h3>
                 </form>
             </div>
         )
