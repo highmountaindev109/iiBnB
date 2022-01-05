@@ -68,9 +68,7 @@ class SignUpForm extends React.Component {
                     this.props.errors.map((errors, i) => <ul key={`${i}`}> {errors}</ul>)
                 }
             </div>
-        )
-
-    }
+        )}
 
     render() {
         return (
@@ -122,7 +120,6 @@ class SignUpForm extends React.Component {
                             onChange={this.updateBio()}
                             placeholder="Tell us about yourself!"
                         />
-                    {"      "}
                     <button className="session-button" id="submit1" type="submit">{this.props.formType}</button>
                     <h3> {this.links()} </h3>
                 </form>
