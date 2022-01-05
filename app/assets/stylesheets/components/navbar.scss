@@ -1,3 +1,7 @@
+// div {
+//     max-width: 2000px;
+// }
+
 .nav-bar {
     display: flex;
     justify-content: space-between;
@@ -57,6 +61,7 @@
     text-decoration: none;
     font-size: 30px;
     font-weight: 900;
-    text-shadow: 0px 1px gray;
+    text-shadow: 2px 2px gray;
     margin-left: 25%;
+    color: #eeddc9;
 }
