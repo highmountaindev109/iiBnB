@@ -1,6 +1,6 @@
-// div {
-//     max-width: 2000px;
-// }
+div {
+    max-width: 1800px;
+}
 
 .nav-bar {
     display: flex;
@@ -11,8 +11,8 @@
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
-    position: sticky;
-    height: 8vh;
+    position: fixed;
+    height: 78px;
     // z-index: 2;
     // margin-left: -10px;
     // margin-top: -10px;  
@@ -64,4 +64,10 @@
     text-shadow: 2px 2px gray;
     margin-left: 25%;
     color: #eeddc9;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
 }

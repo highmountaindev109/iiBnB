@@ -8,7 +8,7 @@ import splash_container from "./splash/splash_container";
 import Modal from "./modal/modal";
 import Footer from "./footer/footer";
 const App = () => (
-    <div>
+    <div className="page">
     <Modal />
     <NavBarContainer />
         <Route path="/" component={splash_container}/>
