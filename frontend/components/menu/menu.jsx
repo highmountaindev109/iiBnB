@@ -7,11 +7,27 @@ class Menu extends React.Component {
         this.state = {
             display: false,
         }
+        this.menuRef = React.createRef()
     }
 
     handleClick = () => {
         this.setState({ display: !this.state.display})
     }
+
+    handleOutsideClick = (e) => {
+        if (this.menuRef.current && !this.menuRef.current.contains(e.target)) {
+            this.setState({display: false})
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('mousedown',this.handleOutsideClick);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown',this.handleOutsideClick);
+    }
+
 
     loggedIn(){
         return (
@@ -38,7 +54,7 @@ class Menu extends React.Component {
 
     render() {
         return (
-            <div onClick={this.handleClick} className="menu-container">
+            <div  className="menu-container" onClick={this.handleClick} ref={this.menuRef}>
                 <div className="menu-icon">
                     <FaBars/>
                     <FaUserCircle/>
