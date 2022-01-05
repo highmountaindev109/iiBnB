@@ -4,15 +4,15 @@
     align-items: center;
     justify-content: center;
     display: flex;
-    background-image: image-url('unsplash.jpg');
+    background-image: image-url('unsplash1.jpg');
     background-repeat: no-repeat;
-    -webkit-background-size: cover;
+    background-size: cover;
     margin-left: -10px;
 }
 
 .flexible_text {
     height: 100px;
-    background-image: linear-gradient(to right, #ccffff, #aebaee, #85b5eb);
+    background-image: linear-gradient(to right, #ccffff 40%, #aebaee, #85b5eb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 38px;

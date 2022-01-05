@@ -15,6 +15,10 @@ class SignUpForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     updateEmail(e) {
         return e => this.setState({ email: e.target.value })
     }
@@ -74,7 +78,7 @@ class SignUpForm extends React.Component {
             <div className="forms-container">
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <h2> Sign up for iiBnB! </h2>
-                    <h3> {this.displayErrors()} </h3>
+                    <h3 className="errorsh3"> {this.displayErrors()} </h3>
                         <input
                             id="email"
                             className="session-input"

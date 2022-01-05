@@ -12,6 +12,10 @@ class LogInForm extends React.Component {
         this.handleDemo = this.handleDemo.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+    
     updateEmail(e) {
         return e => this.setState({ email: e.target.value })
     }
@@ -60,7 +64,7 @@ class LogInForm extends React.Component {
             <div className="forms-container">
                 <form className="session-form" onSubmit={this.handleSubmit}>
                     <h2> Welcome back to iiBnB!</h2>
-                    <h3> {this.displayErrors()} </h3>
+                    <h3 className="errorsh3"> {this.displayErrors()} </h3>
                         <input
                             id="signin-email"
                             className="session-input"

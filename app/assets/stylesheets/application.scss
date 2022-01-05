@@ -11,8 +11,10 @@
  * It is generally better to create a new file per style scope.
  *
 
+%
+*= require_tree .
 *= require_self
 */
 
-@import "./components/input.scss";
-@import "./components/modal.scss";
+// @import "./components/input.scss";
+// @import "./components/modal.scss";
