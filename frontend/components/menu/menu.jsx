@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAlignRight, FaBars, FaUserCircle} from "react-icons/fa/index"
+import { FaBars, FaUserCircle} from "react-icons/fa/index"
 
 class Menu extends React.Component {
     constructor(props){

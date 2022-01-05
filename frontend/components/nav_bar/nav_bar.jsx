@@ -9,7 +9,7 @@ const NavBar = ({ currentUser, logout }) => {
         <header className="nav-bar">
             <div className="nav-bar-left">
                 <Link to={"/"} className="logo-container"> 
-                    <img className='logo-icon' src={window.logoURL}></img>
+                    <img className='logo-icon' src={window.logo_url}></img>
                     <span className='logo-text'>iiBnB</span>
                 </Link> 
             </div>

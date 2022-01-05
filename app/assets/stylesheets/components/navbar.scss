@@ -2,18 +2,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: url(https://www.cyanmarketing.co.uk/wp-content/uploads/2013/10/gradient-header.jpg);
+    // background-image: url(https://www.cyanmarketing.co.uk/wp-content/uploads/2013/10/gradient-header.jpg);
+    background-image: linear-gradient(to right, #9fd5f1, #fceeb5);
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     position: sticky;
     height: 8vh;
+    // z-index: 2;
     // margin-left: -10px;
     // margin-top: -10px;  
 }
 
 .nav-bar-right{
-    border: solid 2px red 2px;
+    // border: solid 2px red 2px;
     display: flex;
     align-items: flex-end;
     // width: 15vw;
@@ -45,4 +47,16 @@
 
 .icon {
     font-size: 30px;
+}
+
+.logo-icon {
+    height: 20px;
+}
+
+.logo-container {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 900;
+    text-shadow: 0px 1px gray;
+    margin-left: 25%;
 }
