@@ -13,7 +13,6 @@ const App = () => (
         <Route path="/" component={splash_container}/>
         {/* <Route path="/signup" component={signup_form_container}/> */}
         {/* <Route path="/login" component={login_form_container}/> */}
-        {/* <FaRegUserCircle /> */}
     </div>
 );
 
