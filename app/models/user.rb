@@ -18,6 +18,7 @@ class User < ApplicationRecord
     validates :password_digest, :session_token, :first_name, :last_name, presence:true
     validates :password, length: {minimum: 6, allow_nil:true}
     after_initialize :ensure_session_token
+    has_one_attached :photo
     
     attr_reader :password
     

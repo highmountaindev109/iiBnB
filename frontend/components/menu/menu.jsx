@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBars, FaUserCircle} from "react-icons/fa/index"
+import { FaBars, FaUserCircle, FaSmileWink} from "react-icons/fa/index"
 
 class Menu extends React.Component {
     constructor(props){
@@ -32,7 +32,7 @@ class Menu extends React.Component {
     loggedIn(){
         return (
             <div className="menu-item">
-                <button className="menu-button">{this.props.currentUser.first_name} Profile</button>
+                <button className="menu-button">{this.props.currentUser.first_name}'s Profile</button>
                 <button className="menu-button" > Messages </button>
                 <button className="menu-button" > Reservations </button>
                 <button className="menu-button" > Saved Trips </button>
@@ -57,7 +57,7 @@ class Menu extends React.Component {
             <div  className="menu-container" onClick={this.handleClick} ref={this.menuRef}>
                 <div className="menu-icon">
                     <FaBars/>
-                    <FaUserCircle/>
+                    {this.props.currentUser ? <FaSmileWink/> : <FaUserCircle/> }
                 </div>
                 {this.state.display && (
                     <>
