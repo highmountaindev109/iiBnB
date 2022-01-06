@@ -57,7 +57,12 @@ class Menu extends React.Component {
             <div  className="menu-container" onClick={this.handleClick} ref={this.menuRef}>
                 <div className="menu-icon">
                     <FaBars/>
-                    {this.props.currentUser ? <FaSmileWink/> : <FaUserCircle/> }
+                    {this.props.currentUser ? ( 
+                            <>
+                                {this.props.currentUser.photoUrl ? <img src={this.props.currentUser.photoUrl} className="profilepic"/> : <FaSmileWink/> }
+                            </>
+                    ): <FaUserCircle/> }
+
                 </div>
                 {this.state.display && (
                     <>

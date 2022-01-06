@@ -5,6 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require 'open-uri'
+
 User.delete_all
-User.create!( email: 'User@Fake.com', first_name: 'Demo', last_name: 'User', password: '123456')
-User.create!( email: 'Tashi@Sangpo.com', first_name: 'Tashi', last_name: 'Sangpo', password: '123456')
+
+demo = User.create!( email: 'User@Fake.com', first_name: 'Demo', last_name: 'User', password: '123456')
+tashi = User.create!( email: 'tashi@sangpo.com', first_name: 'Tashi', last_name: 'Sangpo', password: '123456')
+
+file = URI.open('https://iibnb-seeds.s3.amazonaws.com/demopf.png')
+demo.photo.attach(io: file, filename: 'demopf.png')
