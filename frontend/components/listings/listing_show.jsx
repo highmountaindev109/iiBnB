@@ -68,6 +68,17 @@ class Listing extends React.Component {
                     <div> Things to know</div>
                     <div> Around </div>
                     <div> something </div>
+                    < br/>
+                    <div style={{color:"green"}}> 
+                        Title : {listing.title} <br />
+                        Address: {listing.address} <br />
+                        Description: {listing.description} <br />
+                        Price: ${listing.price} <br />
+                        Guests: {listing.guest_limit} <br />
+                        Bedrooms: {listing.bedrooms} <br />
+                        Bathrooms: {listing.bathrooms} <br />
+                        Host: {listing.host_id} <br />
+                    </div>
                 </div>
             </div>
         );
