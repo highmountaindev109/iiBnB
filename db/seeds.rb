@@ -8,7 +8,7 @@
 
 require 'open-uri'
 
-User.delete_all
+User.delete_all!
 
 demo = User.create!( email: 'User@Fake.com', first_name: 'Demo', last_name: 'User', password: '123456')
 tashi = User.create!( email: 'tashi@sangpo.com', first_name: 'Tashi', last_name: 'Sangpo', password: '123456')

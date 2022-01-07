@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBars, FaUserCircle, FaSmileWink} from "react-icons/fa/index"
+import { FaBars, FaUserCircle, FaSmile} from "react-icons/fa/index"
 
 class Menu extends React.Component {
     constructor(props){
@@ -29,46 +29,41 @@ class Menu extends React.Component {
     }
 
 
-    loggedIn(){
-        return (
+    menuItems(){
+        return(
+        this.props.currentUser ? (
             <div className="menu-item">
                 <button className="menu-button">{this.props.currentUser.first_name}'s Profile</button>
                 <button className="menu-button" > Messages </button>
                 <button className="menu-button" > Reservations </button>
                 <button className="menu-button" > Saved Trips </button>
                 <button className="menu-button" onClick={this.props.logout}>Log out</button>
-            </div>
-        )
-    }
-
-    notloggedIn(){
-        return (
+            </div> ) : (
             <div className="menu-item">
                 <button className="menu-button" onClick={this.props.login}>Log in</button>
                 <button className="menu-button" onClick={this.props.signup}>Sign up</button>
                 <button className="menu-button" onClick={this.props.demo}>Demo User</button>
             </div>
         )
-    }
+    )}
 
+    profileItem(){
+        return(
+            this.props.currentUser.photoUrl ? 
+            (<img src={this.props.currentUser.photoUrl} className="profilepic"/>
+            ) : (<FaSmile/>)
+        )
+    }
 
     render() {
         return (
             <div  className="menu-container" onClick={this.handleClick} ref={this.menuRef}>
                 <div className="menu-icon">
                     <FaBars/>
-                    {this.props.currentUser ? ( 
-                            <>
-                                {this.props.currentUser.photoUrl ? <img src={this.props.currentUser.photoUrl} className="profilepic"/> : <FaSmileWink/> }
-                            </>
+                    {this.props.currentUser ? ( this.profileItem()
                     ): <FaUserCircle/> }
-
                 </div>
-                {this.state.display && (
-                    <>
-                    {this.props.currentUser ? this.loggedIn() : this.notloggedIn()} 
-                    </>
-                )}
+                {this.state.display ? this.menuItems() : null}
             </div>
         );
     } 
