@@ -15,8 +15,9 @@ const receiveListing = listing => ({
     listing
 })
 
-const RemoveListing = listingId => ({
+const removeListing = listingId => ({
     type: REMOVE_LISTING,
+    listingId
 })
 
 const receiveErrors = errors => ({
@@ -47,5 +48,11 @@ export const updateListing = listing => dispatch => (
     ListingAPIUtil.updateListing(listing)
         .then(listing => dispatch(receiveListing(listing)),
             error => dispatch(receiveErrors(error.responseJSON)))
+)
+
+export const deleteListing = listingId => dispatch => (
+    ListingAPIUtil.deleteListing(listingId)
+    .then(() => dispatch(removeListing(listingId)),
+        error => dispatch(receiveErrors(error.responseJSON)))
 )
 
