@@ -8,7 +8,7 @@ import { fetchListings,
 import Listing from "./listing_show";
 
 const mSTP = ( state , ownProps) => ({
-    listing: state.entities.listing[ownProps.match.params.listingId]
+    listing: state.entities.listings[ownProps.match.params.listingId]
 })
 
 const mDTP = dispatch => ({
