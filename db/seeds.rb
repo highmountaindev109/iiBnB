@@ -8,10 +8,12 @@
 
 require 'open-uri'
 
-User.delete_all!
+User.delete_all
 
 demo = User.create!( email: 'User@Fake.com', first_name: 'Demo', last_name: 'User', password: '123456')
 tashi = User.create!( email: 'tashi@sangpo.com', first_name: 'Tashi', last_name: 'Sangpo', password: '123456')
 
 file = URI.open('https://iibnb-seeds.s3.amazonaws.com/demopf.png')
 demo.photo.attach(io: file, filename: 'demopf.png')
+
+listing1 = Listing.create!(host_id: 1, title: "The Box", description: "Just a box", address: "Corner of Wall Street", guest_limit: 1, price: 100, bedrooms: 1, bathrooms: 1 )
