@@ -12,6 +12,7 @@
     background-size: cover;
     position: fixed;
     height: 78px;
+    z-index: 3;
 }
 
 .nav-bar-right{
@@ -41,7 +42,7 @@
 }
 
 .nav-bar-left {
-    display: flex;
+    display: inline-flex;
     margin: 20px;
 }
 
@@ -51,6 +52,7 @@
 
 .logo-icon {
     height: 20px;
+    padding-right: 5px;
 }
 
 .logo-container {
@@ -58,8 +60,10 @@
     font-size: 30px;
     font-weight: 900;
     text-shadow: 2px 2px gray;
-    margin-left: 25%;
+    margin-left: 20%;
     color: #eeddc9;
+    display: inline-flex;
+    align-items: center;
 }
 
 .sticky {
