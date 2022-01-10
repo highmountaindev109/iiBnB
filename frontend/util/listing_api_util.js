@@ -15,8 +15,10 @@ export const fetchListing = (listingId) => (
 export const createListing = listing => (
     $.ajax({
         url: `api/listings`,
-        method: 'post',
-        data: {listing}
+        method: 'POST',
+        data: {listing},
+        contentType: false,
+        processData: false
     })
 )
 

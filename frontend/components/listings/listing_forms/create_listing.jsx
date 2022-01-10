@@ -13,7 +13,7 @@ class CreateListing extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
+        const {name, photos} = this.state;
         const formData = new FormData();
         formData.append("listing[host_id]", this.state.host_id);
         formData.append("listing[title]", this.state.title);
@@ -24,9 +24,9 @@ class CreateListing extends React.Component {
         formData.append("listing[bedrooms]", this.state.bedrooms);
         formData.append("listing[bathrooms]", this.state.title);
 
-        // for (let i = 0 ; i < photos.length; i++) {
-        //     formData.append("listing[photos][]", photos[i])
-        // }
+        for (let i = 0 ; i < photos.length; i++) {
+            formData.append("listing[photos][]", photos[i])
+        }
 
         this.props.createListing(this.state)
         .then( (prop) => this.props.history.push(`/listings/${prop.listing.id}`))
@@ -140,6 +140,14 @@ class CreateListing extends React.Component {
                             required
                     />
                     </label>
+                    <div className="photo-submission-container">
+                        <input
+                            type="file"
+                            onChange={e => this.setState({ photos: e.target.files })}
+                            multiple
+                        />
+                    </div>
+
                     <div className="form-button-wrapper-container">   
                     <div className="form-button-wrapper">
                     <button className="session-button session-button2" id="submit1" type="submit"> Create Listing </button>
