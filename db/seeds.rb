@@ -28,3 +28,11 @@ listingphoto5 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kelli-mcclinto
 listingphoto6 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kelli-mcclintock-GopRYASfsOc-unsplash.jpg')
 listingphoto7 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/brandable-box-8mCsyImZRGY-unsplash.jpg')
 
+
+listing1.photos.attach(io: listingphoto1, filename:'kelli-mcclintock-d21p_xkPoMA-unsplash.jpg')
+listing1.photos.attach(io: listingphoto2, filename:'cb2.jpg')
+listing1.photos.attach(io: listingphoto3, filename:'cb3.jpg')
+listing1.photos.attach(io: listingphoto4, filename:'cb4.jpg')
+listing1.photos.attach(io: listingphoto5, filename:'cb5.jpg')
+listing1.photos.attach(io: listingphoto6, filename:'cb6.jpg')
+listing1.photos.attach(io: listingphoto7, filename:'cb7.jpg')

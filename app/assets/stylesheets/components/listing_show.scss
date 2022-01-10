@@ -15,12 +15,13 @@
     // margin-top: 78px;
     border: solid purple 3px;
     width: 100%;
+    background-image: linear-gradient(to left, #9fd5f1, #fceeb5);
 }
 
 .listingshowpage{
     // height: 110vh;
     width: 90vw;
-    // border: 2px solid black;
+    border: 2px solid black;
     margin-left: 5vw;
     // margin-top: 78px;
 }
@@ -31,7 +32,8 @@
     // justify-content: center;
     // align-content: center;
     justify-content: space-between;
-    // margin-left: 2.5vw;
+    margin-left: 3%;
+    width: 90%;
 }
 
 .title{
@@ -50,7 +52,7 @@
     height: 60vh;
     justify-content: space-between;
     display: flex;
-    border: green solid 2px;
+    // border: green solid 2px;
     gap: 20px;
     // margin: auto 5px;
     // margin-left: 2.5vw;
@@ -58,7 +60,7 @@
     // border-radius: 20px;
 }
 .photo1 {
-    background-color: grey;
+    // background-color: grey;
     flex: 3;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -83,8 +85,8 @@
 .photo4,
 .photo5 {
     height: 48%;
-    background-color: hotpink;
-    border: 2px purple solid;
+    // background-color: hotpink;
+    // border: 2px purple solid;
 }
 
 .photo4 {
@@ -98,7 +100,7 @@
 .middlelisting{
     display: inline-flex;
     justify-content: space-evenly;
-    // border: red 2px solid;
+    border: red 2px solid;
     width: 100%;
 }
 
@@ -210,8 +212,8 @@
 .photo67 {
     width: 48%;
     height: 80%;
-    background-color: red;
-    border: blue 2px solid;
+    // background-color: red;
+    // border: blue 2px solid;
     align-self: center;
     gap: 10px;
     border-radius: 20px;
@@ -259,4 +261,66 @@
 .amenitiesright,
 .amenitiesleft {
     width: 50%;
+}
+
+.lphoto6,
+.lphoto7,
+.lphoto2,
+.lphoto3,
+.lphoto4,
+.lphoto5,
+.lphoto1 {
+    width: 100%;
+    height: 100%;
+}
+
+.lphoto1 {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.lphoto4{
+    border-top-right-radius: 20px;
+}
+
+.lphoto5 {
+    border-bottom-right-radius: 20px;
+}
+
+.lphoto6 {
+    border-radius: 20px;
+}
+
+.calendar{
+    border-top: 2px solid lightgray;
+    width: 90%;
+    font-size: 24px;
+    font-weight: 500;
+    height: 50px;
+    padding-top: 45px;
+    margin-left: 5%;
+}
+
+.calendar-item{
+    width: 100%;
+}
+
+.calendar-container{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.listingright {
+    display: flex;
+    // align-items: flex-start;
+
+}
+
+.booker{
+    width: 95%;
+    position: -webkit-sticky;
+    position: sticky;
+    // object-fit: contain;
+    top: 7.5%;
+
 }

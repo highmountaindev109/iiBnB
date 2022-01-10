@@ -33,14 +33,22 @@ class Listing extends React.Component {
                         <div className="details">5.00 Star • 420 Reviews • {listing.address} </div>
                     </div>
                     <div className="listingphotos"> 
-                        <div className="photo1">1</div>
+                        <div className="photo1">
+                            <img src={listing.photos[0]} alt="" className="lphoto1"/>
+                        </div>
                         <div className="photo23container">
-                            <div className="photo2">2</div>
-                            <div className="photo3">3</div>
+                            <div className="photo2">
+                                <img src={listing.photos[1]} alt="" className="lphoto2" />
+                            </div>
+                            <div className="photo3">
+                                <img src={listing.photos[2]} alt="" className="lphoto3"/>
+                            </div>
                         </div>
                         <div className="photo45container">
-                            <div className="photo4">4</div>
-                            <div className="photo5">5</div>
+                            <div className="photo4">
+                                <img src={listing.photos[3]} alt="" className="lphoto4" />
+                            </div>
+                            <div className="photo5"><img src={listing.photos[4]} alt="" className="lphoto5" /></div>
                         </div>
                     </div>
                     <div className="middlelisting"> 
@@ -85,8 +93,12 @@ class Listing extends React.Component {
                             <div className="ldescription"> Been looking for a 1 bed home (all upstairs) in Fairfield? You have just found it. Main house features many unique finishes-double car attached garage, 12mm free standing glass railings & White Cabinetry/Granite counters. Open House Saturday 5th 1-3pm.</div>
                             <div className="lsleep">Where you'll sleep</div>
                             <div className="listingphotosbeds">
-                                    <div className="photo67">Photo 6</div>
-                                    <div className="photo67">Photo 7</div>
+                                    <div className="photo67">
+                                    <img src={listing.photos[5]} alt="" className="lphoto6" />
+                                    </div>
+                                    <div className="photo67">
+                                    <img src={listing.photos[6]} alt="" className="lphoto6" />
+                                    </div>
                                 
                             </div>
                             <div className="offers">What this place offers</div>
@@ -137,10 +149,13 @@ class Listing extends React.Component {
                                     </div>
                                 </div>
                             <div className="calendar"> Calendar</div>
+                            <div className="calendar-container">
+                                <img src={window.calendar_url} alt="" className="calendar-item" />
+                            </div>
                         </div>
 
                         <div className="listingright">
-                            <div> Price</div>
+                            <div> <img src={window.booking_url} alt="" className="booker"/></div>
                         </div>
                     </div>
                     <div> Reviews Container</div>

@@ -10,7 +10,9 @@
     <%= javascript_include_tag 'application' %>
     <script type="text/javascript">
       window.splashURL = "<%= image_url('unsplash1.jpg') %>"; // change this
-      window.logo_url = "<% image_url('iibi.png') %>";
+      window.logo_url = "<%= image_url('iibi.png') %>";
+      window.calendar_url = "<%= image_url('c1.png') %>";
+      window.booking_url = "<%= image_url('b1.png') %>"
     </script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300&display=swap');
