@@ -48,7 +48,9 @@ class Listing extends React.Component {
                             <div className="photo4">
                                 <img src={listing.photos[3]} alt="" className="lphoto4" />
                             </div>
-                            <div className="photo5"><img src={listing.photos[4]} alt="" className="lphoto5" /></div>
+                            <div className="photo5">
+                                <img src={listing.photos[4]} alt="" className="lphoto5" />
+                            </div>
                         </div>
                     </div>
                     <div className="middlelisting"> 

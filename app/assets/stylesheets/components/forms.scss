@@ -1,0 +1,88 @@
+.forms-container2 {
+    align-content: center;
+    align-self: center;
+    border-bottom: none;
+    border-top: none;
+    // border: 3px black solid;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    // height: 80vh;
+    justify-content: center;
+    margin-top: 100px;
+    width: 80%;
+    border-radius: 30px;
+    box-shadow: 3px 3px 2px 2px gray;
+}
+
+.labelListing {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-self: center;
+    margin-left: 3%;
+    font-size: 28px;
+    // border: 2px solid black;
+}
+
+.session-input2 {
+    width: 75%;
+    height: 8vh;
+    margin-right: 3%;
+    font-size: 30px;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right:none;
+    max-width: 75%;
+    min-width: 75%;
+}
+
+.session-input3 {
+    border-left: 3px solid pink;
+    border-right: 3px solid pink;
+    border-bottom: 3px solid pink;
+}
+
+.labels1{
+    align-self: center;
+    // margin-left: 
+    justify-content: center;
+    display: flex;
+}
+
+.session-button2 {
+    align-self: center;
+}
+
+.form-button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    // border: 2px red solid;
+    align-self: center;
+    align-content: center;
+}
+
+.form-button-wrapper-container {
+    width: 100%;
+    // border: 2px solid gray;
+    justify-content: center;
+    display: flex;
+    align-content: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.form-type-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.form-type-title {
+    font-size: 28px;
+}

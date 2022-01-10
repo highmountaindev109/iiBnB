@@ -13,12 +13,12 @@ const App = () => (
     <div className="page">
     <Modal />
 
-    {/* <header><NavBarContainer /></header> */}
+    <header><NavBarContainer /></header>
         <Route exact path="/" component={splash_container}/>
         <Route path="/listings/:listingId" component={listing_show_container} />
-        <Route exact path="/new/listings" component={CreateListingContainer} />
+        <Route exact path="/new/listing" component={CreateListingContainer} />
         <Route exact path="/listings" component={listings_index_container} />
-    {/* <footer><Footer /></footer> */}
+    <footer><Footer /></footer>
     </div>
 );
 
