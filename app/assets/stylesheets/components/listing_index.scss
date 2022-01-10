@@ -1,0 +1,106 @@
+.indexphoto {
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    min-width: 300px;
+
+}
+
+.li-container {
+    font-size: 22px;
+    // border: solid springgreen 5px;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.listings-index-container {
+    // border:red 2px solid;
+    display: flex;
+    // height: 800px;
+    justify-content: space-between;
+    // display: flex inline-flex;
+    text-decoration: none;
+    background-image: linear-gradient(to left, #9fd5f1, #fceeb5);
+}
+
+.mapcontainerindex {
+    flex: 2;
+    width: 60%;
+    // border: 2px violet solid;
+}
+
+.listingsindex{
+    width: 100%;
+    // border: black solid 3px;
+    // height: 500px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 2;
+}
+
+.listings{
+}
+
+.right-index-item {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // border: orange 2px solid;
+    height: 200px;
+    width: 66%;
+    color: gray;
+}
+
+.listitle1 {
+    font-size: 16px;
+}
+.listitle2 {
+    color: black;
+}
+
+.listitle {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.listitlecontainer {
+    margin-left: 10px;
+}
+
+.lisdetails {
+    margin-left: 10px;
+}
+
+.lisprice {
+    margin-left: 10px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.lisrating {
+    display: flex;
+}
+
+.btext {
+    color: black;
+}
+
+.rstar {
+    color: red;
+}
+
+.mapcontainerindex,
+.mapphoto{
+    margin-left: 3%;
+    width: 100%;
+    height: 100vh;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
