@@ -9,7 +9,7 @@ const Splash = ({currentUser}) => {
                     <div>
                         <h1 className="flexible_text"> Not sure where to go? Perfect.</h1>
                         <div className="button-wrapper">
-                            <button className="flexible_button"> I'm Flexible </button>
+                            <Link to={`/listings`} className="flexible_button"> I'm Flexible </Link>
                         </div>
                     </div>
                 </div>
