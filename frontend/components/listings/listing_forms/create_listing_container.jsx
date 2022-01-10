@@ -13,6 +13,7 @@ const mSTP = state => ({
         price: "",
         bedrooms: "",
         bathrooms: "",
+        photos: [],
     },
     formType: "Create Listing"
 });
