@@ -6,13 +6,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-image: linear-gradient(to right, #9fd5f1, #fceeb5);
+    // background-image: linear-gradient(to right, #9fd5f1, #fceeb5);
     width: 100vw;
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
     height: 78px;
     z-index: 3;
+    border-bottom: 2px lightgray solid;
+    background-color: whitesmoke;
 }
 
 .nav-bar-right{
