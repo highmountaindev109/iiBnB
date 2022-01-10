@@ -18,8 +18,10 @@ const mSTP = state => ({
     formType: "Create Listing"
 });
 
-const mDTP = dispatch => ({
+const mDTP = dispatch => {
+    return {
     createListing: listing => dispatch(createListing(listing))
-})
+    }
+}
 
 export default connect(mSTP,mDTP)(CreateListing)
