@@ -19,14 +19,14 @@
 }
 
 .listings-index-container {
+    // background-image: linear-gradient(to left, #9fd5f1, #fceeb5);
     // border:red 2px solid;
-    display: flex;
-    // height: 800px;
-    justify-content: space-between;
     // display: flex inline-flex;
-    text-decoration: none;
-    background-image: linear-gradient(to left, #9fd5f1, #fceeb5);
+    // height: 800px;
+    display: flex;
+    justify-content: space-between;
     margin-top: 78px;
+    text-decoration: none;
 }
 
 .mapcontainerindex {

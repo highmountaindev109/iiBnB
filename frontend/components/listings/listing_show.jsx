@@ -7,6 +7,7 @@ import {GiButterflyFlower, GiCctvCamera, GiHanger} from "react-icons/gi/index"
 import {GrDocker} from "react-icons/gr/index"
 import {CgSmartHomeWashMachine} from "react-icons/cg/index"
 import {AiOutlineCar} from "react-icons/ai/index"
+import Map from "../map/map";
 class Listing extends React.Component {
     constructor(props) {
         super(props)
@@ -161,7 +162,7 @@ class Listing extends React.Component {
                         </div>
                     </div>
                     <div> Reviews Container</div>
-                    <div> Map Container </div>
+                    <div> <Map /> </div>
                     <div> Host Info</div>
                     <div> Things to know</div>
                     <div> Around </div>

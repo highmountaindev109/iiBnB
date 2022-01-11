@@ -29,7 +29,6 @@ class CreateListing extends React.Component {
         for (let i = 0 ; i < photos.length; i++) {
             formData.append("listing[photos][]", photos[i])
         }
-
         this.props.createListing(formData)
         .then( (prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }

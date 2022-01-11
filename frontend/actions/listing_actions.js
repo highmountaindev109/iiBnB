@@ -45,11 +45,13 @@ export const createListing = listing => dispatch => {
             error => dispatch(receiveErrors(error.responseJSON)))
 )}
 
-export const updateListing = listing => dispatch => (
+export const updateListing = listing => dispatch => {
+    debugger
+    return(
     ListingAPIUtil.updateListing(listing)
         .then(listing => dispatch(receiveListing(listing)),
             error => dispatch(receiveErrors(error.responseJSON)))
-)
+)}
 
 export const deleteListing = listingId => dispatch => (
     ListingAPIUtil.deleteListing(listingId)

@@ -13,6 +13,8 @@ class EditListingForm extends React.Component{
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
         .then(() => this.setState ({listing: this.props.listing, loading:false}))
+        .fail(console.log(this.state))
+        .fail(console.log(this.props))
     }
 
     handleUpdate(field) {
@@ -34,18 +36,18 @@ class EditListingForm extends React.Component{
         formData.append("listing[bathrooms]", this.state.bathrooms);
         formData.append("listing[longitutude]", this.state.longitude);
         formData.append("listing[latitutude]", this.state.latitude);
-        formData.append("listing[:id]", this.state.listing.id)
+        // formData.append("listing[:id]", this.state.id)
         // for (let i = 0; i < photos.length; i++) {
         //     formData.append("listing[photos][]", photos[i])
         // }
-
+        debugger
         this.props.updateListing(formData)
             .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }
 
 
     render() {
-        if (this.loading) {return null;}
+        if (!this.state) {return null;}
         return (
             <div className="forms-container2">
                 <form onSubmit={this.handleSubmit} className="session-form2">
