@@ -93,3 +93,13 @@
     justify-content: center;
     padding-top: 20px;
 }
+
+.map-container {
+    min-height: 500px;
+    min-width: 500px;
+    height: 70%;
+    width: 100%;
+    margin-top: 78px;
+    z-index: 3;
+    // top: 7.5%;
+}

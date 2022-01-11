@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAPS_API_KEY']}" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    
     <script type="text/javascript">
       window.splashURL = "<%= image_url('unsplash1.jpg') %>"; // change this
       window.logo_url = "<%= image_url('iibi.png') %>";

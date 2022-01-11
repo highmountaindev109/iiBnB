@@ -1,6 +1,7 @@
 import React from "react";
 import { fetchListings } from "../../actions/listing_actions";
 import ListingsIndexItem from "./listings_item";
+import Map from "../map/map";
 
 class ListingIndex extends React.Component{
 
@@ -23,7 +24,7 @@ class ListingIndex extends React.Component{
                     ))}
                 </div>
                 <div className="mapcontainerindex">
-                    <img src={window.map_url} alt="" className="mapphoto"/>
+                    <Map />
                 </div>
             </div>
 

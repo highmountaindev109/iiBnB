@@ -38,11 +38,12 @@ export const fetchListing = listingId => dispatch => (
             error => dispatch(receiveErrors(error.responseJSON)))
 )
 
-export const createListing = listing => dispatch => (
+export const createListing = listing => dispatch => {
+    return(
     ListingAPIUtil.createListing(listing)
         .then(listing => dispatch(receiveListing(listing)),
             error => dispatch(receiveErrors(error.responseJSON)))
-)
+)}
 
 export const updateListing = listing => dispatch => (
     ListingAPIUtil.updateListing(listing)

@@ -22,13 +22,13 @@ class CreateListing extends React.Component {
         formData.append("listing[guest_limit]", this.state.guest_limit);
         formData.append("listing[price]", this.state.price);
         formData.append("listing[bedrooms]", this.state.bedrooms);
-        formData.append("listing[bathrooms]", this.state.title);
+        formData.append("listing[bathrooms]", this.state.bathrooms);
 
         for (let i = 0 ; i < photos.length; i++) {
             formData.append("listing[photos][]", photos[i])
         }
 
-        this.props.createListing(this.state)
+        this.props.createListing(formData)
         .then( (prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }
 
