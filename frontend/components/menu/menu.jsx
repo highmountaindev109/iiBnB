@@ -36,7 +36,7 @@ class Menu extends React.Component {
                 <button className="menu-button">{this.props.currentUser.first_name}'s Profile</button>
                 <button className="menu-button" > Messages </button>
                 <button className="menu-button" > Reservations </button>
-                <button className="menu-button" > Saved Trips </button>
+                <button className="menu-button" > <a href='#/new/listing'> Create Listing </a></button>
                 <button className="menu-button" onClick={this.props.logout}>Log out</button>
             </div> ) : (
             <div className="menu-item">

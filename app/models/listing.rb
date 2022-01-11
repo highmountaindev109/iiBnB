@@ -16,7 +16,7 @@
 #
 class Listing < ApplicationRecord
     
-    validates :title, :description, :address, :guest_limit, :price, :bedrooms, :bathrooms, presence:true
+    validates :title, :description, :address, :guest_limit, :price, :bedrooms, :bathrooms, :longitude , :latitude, presence:true
 
     belongs_to :host,
     foreign_key: :host_id,

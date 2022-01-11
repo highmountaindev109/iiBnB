@@ -9,6 +9,8 @@ class CreateListings < ActiveRecord::Migration[6.1]
       t.integer :price, null: false
       t.integer :bedrooms, null: false
       t.integer :bathrooms, null: false
+      t.float :longitude, null: false
+      t.float :latitude, null: false
       t.timestamps
     end
     add_index :listings, :host_id

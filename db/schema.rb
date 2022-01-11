@@ -52,8 +52,11 @@ ActiveRecord::Schema.define(version: 2022_01_06_052130) do
     t.integer "price", null: false
     t.integer "bedrooms", null: false
     t.integer "bathrooms", null: false
+    t.float "longitude", null: false
+    t.float "latitude", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["host_id"], name: "index_listings_on_host_id"
   end
 
   create_table "users", force: :cascade do |t|

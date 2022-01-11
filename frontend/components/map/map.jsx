@@ -1,11 +1,18 @@
 import React from "react";
+import MarkerManager from "../../util/marker_manager";
+
+const fetchCoordinates = latLng => ({
+    lat: latLng.lat(),
+    lng: latLng.lng()
+})
+
 
 class Map extends React.Component {
 
     componentDidMount() {
         const mapOptions = {
-            center: { lat: 37.7758, lng: -122.435 }, // this is SF
-            zoom: 13
+            center: { lat: 40.706064, lng: -74.008782}, //NYC Coords
+            zoom: 10
         };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);

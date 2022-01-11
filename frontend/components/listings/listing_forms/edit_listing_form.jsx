@@ -21,9 +21,10 @@ class EditListingForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         const { photos } = this.state;
         const formData = new FormData();
-        formData.append("listing[host_id]", this.state.host_id);
+        // formData.append("listing[host_id]", this.state.host_id);
         formData.append("listing[title]", this.state.title);
         formData.append("listing[description]", this.state.description);
         formData.append("listing[address]", this.state.address);
@@ -31,12 +32,14 @@ class EditListingForm extends React.Component{
         formData.append("listing[price]", this.state.price);
         formData.append("listing[bedrooms]", this.state.bedrooms);
         formData.append("listing[bathrooms]", this.state.bathrooms);
-
+        formData.append("listing[longitutude]", this.state.longitude);
+        formData.append("listing[latitutude]", this.state.latitude);
+        formData.append("listing[:id]", this.state.listing.id)
         // for (let i = 0; i < photos.length; i++) {
         //     formData.append("listing[photos][]", photos[i])
         // }
 
-        this.props.updateListing(formData,this.state.id)
+        this.props.updateListing(formData)
             .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }
 
@@ -126,6 +129,30 @@ class EditListingForm extends React.Component{
                             type="number"
                             value={this.state.bathrooms}
                             onChange={this.handleUpdate("bathrooms")}
+                            required
+                        />
+                    </label>
+                    <label className="labelListing">
+                        <div className="labels1">
+                            Longitude
+                        </div>
+                        <input
+                            className="session-input2 session-input3"
+                            type="text"
+                            value={this.state.longitude}
+                            onChange={this.handleUpdate("longitude")}
+                            required
+                        />
+                    </label>
+                    <label className="labelListing">
+                        <div className="labels1">
+                            Latitude
+                        </div>
+                        <input
+                            className="session-input2 session-input3"
+                            type="text"
+                            value={this.state.latitude}
+                            onChange={this.handleUpdate("latitude")}
                             required
                         />
                     </label>

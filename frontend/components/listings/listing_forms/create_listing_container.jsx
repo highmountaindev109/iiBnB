@@ -13,6 +13,8 @@ const mSTP = state => ({
         price: "",
         bedrooms: "",
         bathrooms: "",
+        longitude: "",
+        latitude: "",
         photos: [],
     },
     formType: "Create Listing"
