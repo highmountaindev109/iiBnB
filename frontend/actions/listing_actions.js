@@ -32,11 +32,12 @@ export const fetchListings = () => dispatch => (
     )
 )
 
-export const fetchListing = listingId => dispatch => (
+export const fetchListing = listingId => dispatch => {
+    return (
     ListingAPIUtil.fetchListing(listingId)
         .then(listing => dispatch(receiveListing(listing)),
             error => dispatch(receiveErrors(error.responseJSON)))
-)
+)}
 
 export const createListing = listing => dispatch => {
     return(
@@ -45,10 +46,9 @@ export const createListing = listing => dispatch => {
             error => dispatch(receiveErrors(error.responseJSON)))
 )}
 
-export const updateListing = listing => dispatch => {
-    debugger
+export const updateListing = (listing,listingId) => dispatch => {
     return(
-    ListingAPIUtil.updateListing(listing)
+    ListingAPIUtil.updateListing(listing,listingId)
         .then(listing => dispatch(receiveListing(listing)),
             error => dispatch(receiveErrors(error.responseJSON)))
 )}

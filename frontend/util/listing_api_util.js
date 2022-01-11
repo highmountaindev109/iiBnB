@@ -5,12 +5,13 @@ export const fetchListings = () => (
     })
 )
 
-export const fetchListing = (listingId) => (
+export const fetchListing = (listingId) => {
+    return (
     $.ajax({
         url: `/api/listings/${listingId}`,
         method: 'GET'
-    })
-)
+    }))
+}
 
 export const createListing = listing => {
     return (
@@ -24,15 +25,18 @@ export const createListing = listing => {
 )
 }
 
-export const updateListing = listing => (
+export const updateListing = (listing,listingId) => {
+    debugger
+    return (
+
     $.ajax({
-        url: `api/listings/${listing.id}`,
+        url: `api/listings/${listingId}`,
         method: 'patch',
         data: listing,
         contentType: false,
         processData: false
     })
-)
+)}
 
 export const deleteListing = listingId => (
     $.ajax({

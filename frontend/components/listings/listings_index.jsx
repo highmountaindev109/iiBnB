@@ -13,7 +13,6 @@ class ListingIndex extends React.Component{
         this.props.fetchListings()
     }
 
-
     render(){
         const { listings } = this.props
         return (

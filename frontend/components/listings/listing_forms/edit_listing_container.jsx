@@ -12,7 +12,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => ({
     fetchListing: listingId => dispatch(fetchListing(listingId)),
-    updateListing: listing => dispatch(updateListing(listing))
+    updateListing: (listing,listingId) => dispatch(updateListing(listing,listingId))
 })
 
 export default withRouter(connect(mSTP,mDTP)(EditListingForm));

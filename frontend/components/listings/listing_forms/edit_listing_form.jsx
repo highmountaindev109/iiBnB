@@ -4,17 +4,18 @@ class EditListingForm extends React.Component{
     constructor(props){
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleUpdate = this.handleUpdate.bind(this)
         this.state = {
-            listing: this.props.listing,
             loading: true
         }
+        console.log(this.props)
     }
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
-        .then(() => this.setState ({listing: this.props.listing, loading:false}))
-        .fail(console.log(this.state))
-        .fail(console.log(this.props))
+        .then(() => this.setState (Object.assign({},this.props.listing,{loading:false})))
+        // .fail(console.log(this.state))
+        // .fail(console.log(this.props))
     }
 
     handleUpdate(field) {
@@ -23,7 +24,6 @@ class EditListingForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         const { photos } = this.state;
         const formData = new FormData();
         // formData.append("listing[host_id]", this.state.host_id);
@@ -36,18 +36,18 @@ class EditListingForm extends React.Component{
         formData.append("listing[bathrooms]", this.state.bathrooms);
         formData.append("listing[longitutude]", this.state.longitude);
         formData.append("listing[latitutude]", this.state.latitude);
-        // formData.append("listing[:id]", this.state.id)
+        formData.append("listing[id]", this.state.id)
         // for (let i = 0; i < photos.length; i++) {
         //     formData.append("listing[photos][]", photos[i])
         // }
         debugger
-        this.props.updateListing(formData)
+        this.props.updateListing(formData, this.state.id)
             .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }
 
 
     render() {
-        if (!this.state) {return null;}
+        if (this.state.loading) {return null;}
         return (
             <div className="forms-container2">
                 <form onSubmit={this.handleSubmit} className="session-form2">
