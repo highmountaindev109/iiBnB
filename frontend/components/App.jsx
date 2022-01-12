@@ -9,6 +9,8 @@ import listings_index_container from "./listings/listings_index_container"
 import CreateListingContainer from "./listings/listing_forms/create_listing_container";
 import Map from "./map/map";
 import edit_listing_container from "./listings/listing_forms/edit_listing_container";
+import { AuthRoute, ProtectedRoute } from "../util/route_util";
+
 
 const App = () => (
 
@@ -18,9 +20,9 @@ const App = () => (
     <header><NavBarContainer /></header>
     <Switch>
         <Route exact path="/" component={splash_container}/>
-        <Route exact path="/listings/:listingId/edit" component={edit_listing_container} />
+        <ProtectedRoute exact path="/listings/:listingId/edit" component={edit_listing_container} />
         <Route path="/listings/:listingId" component={listing_show_container} />
-        <Route exact path="/new/listing" component={CreateListingContainer} />
+        <ProtectedRoute exact path="/new/listing" component={CreateListingContainer} />
         <Route exact path="/listings" component={listings_index_container} />
         <Route exact path="/map" component={Map} />
     </Switch>

@@ -19,13 +19,28 @@ export default class MarkerManager {
     }
 
     createMarkerFromListing(listing) {
+        // const mapIcon = {
+        //     path: "M 0 0 H 30 V 30 H 0 L 0 0",
+        //     fillColor: "white",
+        //     fillOpacity: 1,
+        //     scale: .90,
+        //     labelOrigin: new google.maps.Point(0, -25),
+        // }
+
         let position = new google.maps.LatLng(listing.latitude, listing.longitude);
         // debugger
         let marker = new google.maps.Marker({
             title: listing.title,
             position,
             map: this.map,
-            listingId: listing.id
+            listingId: listing.id,
+            animation: google.maps.Animation.DROP,
+            label: {
+                text: `$${listing.price}`,
+                font: "8px",
+                color: "white"
+            },
+            // icon: mapIcon
         })
 
         this.markers[marker.listingId] = marker;

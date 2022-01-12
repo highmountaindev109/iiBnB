@@ -87,6 +87,10 @@
     height: 48%;
     // background-color: hotpink;
     // border: 2px purple solid;
+    background-image: image-url('noimage.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    object-fit: cover;
 }
 
 .photo4 {
@@ -150,6 +154,9 @@
     // border: black 1px solid;
     border-radius: 60px;
     margin-right: 2%;
+        background-image: image-url('noimage.svg');
+    background-repeat: no-repeat;
+    background-size: 100%;
 }
 
 .listingleft2{
@@ -217,6 +224,9 @@
     align-self: center;
     gap: 10px;
     border-radius: 20px;
+    background-image: image-url('noimage.svg');
+    background-repeat: no-repeat;
+    background-size: 80%;
 }
 
 .offers,
