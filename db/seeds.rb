@@ -19,9 +19,9 @@ tashi = User.create!( email: 'tashi@sangpo.com', first_name: 'Tashi', last_name:
 file = URI.open('https://iibnb-seeds.s3.amazonaws.com/demopf.png')
 demo.photo.attach(io: file, filename: 'demopf.png')
 
-listing1 = Listing.create!(host_id: 1, title: "The Box", description: "Just a box", address: "Corner of Wall Street", guest_limit: 1, price: 100, bedrooms: 1, bathrooms: 1, longitude: 40.706064, latitude: -74.008782)
-listing2 = Listing.create!(host_id: 1, title: "The Beach", description: "Just a beach house", address: "Somewhere in Miami", guest_limit: 12, price: 1200, bedrooms: 8, bathrooms: 6, longitude:40.701613, latitude: -73.995008 )
-listing3 = Listing.create!(host_id: 2, title: "The Cabin in the Woods", description: "It's a cabin in the woods", address: "Somewhere undisclosed", guest_limit: 6, price: 237, bedrooms: 3, bathrooms: 1.5, longitude:40.702105, latitude:-73.997019 )
+listing1 = Listing.create!(host_id: 1, title: "The Box", description: "Just a box", address: "Corner of Wall Street", guest_limit: 1, price: 100, bedrooms: 1, bathrooms: 1, latitude: 40.706064, longitude: -74.008782)
+listing2 = Listing.create!(host_id: 1, title: "The Beach", description: "Just a beach house", address: "Somewhere in Miami", guest_limit: 12, price: 1200, bedrooms: 8, bathrooms: 6, latitude: 40.701613, longitude:-73.995008 )
+listing3 = Listing.create!(host_id: 2, title: "The Cabin in the Woods", description: "It's a cabin in the woods", address: "Somewhere undisclosed", guest_limit: 6, price: 237, bedrooms: 3, bathrooms: 1.5, latitude:40.702105, longitude:-73.997019 )
 listingphoto1 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kelli-mcclintock-d21p_xkPoMA-unsplash.jpg')
 listingphoto2 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kadarius-seegars-DevJkLB3hWE-unsplash.jpg')
 listingphoto3 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kadarius-seegars-S6OvsSwm5sE-unsplash.jpg')

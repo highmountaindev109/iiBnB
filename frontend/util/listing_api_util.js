@@ -26,7 +26,7 @@ export const createListing = listing => {
 }
 
 export const updateListing = (listing,listingId) => {
-    debugger
+    // debugger
     return (
 
     $.ajax({

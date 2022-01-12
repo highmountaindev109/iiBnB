@@ -8,24 +8,31 @@ import {GrDocker} from "react-icons/gr/index"
 import {CgSmartHomeWashMachine} from "react-icons/cg/index"
 import {AiOutlineCar} from "react-icons/ai/index"
 import Map from "../map/map";
+import MapContainer from "../map/map_container";
 class Listing extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            listing: this.props.listings,
-            loading: true
-        }
+        // this.state = {
+        //     loading: true,
+        // }
     }
 
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
-        .then(() => {this.setState({ loading: false})})
+        // .then(() => {this.setState({ loading: false,})})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.match.params.listingId !== this.props.match.params.listingId){
+        this.props.fetchListing(this.props.match.params.listingId)}
     }
 
     render() {
-        if (this.state.loading) return (<h1> Loading </h1>);
-
+        // debugger
         const { listing } = this.props
+        if (!listing) return (<h1> Loading </h1>);
+        // debugger
+
         return(
             <div className="lister">
                 <div className="listingshowpage">
@@ -162,7 +169,7 @@ class Listing extends React.Component {
                         </div>
                     </div>
                     <div> Reviews Container</div>
-                    <div> <Map /> </div>
+                    <div> <MapContainer listings={listing} singleListing={true}/>  </div>
                     <div> Host Info</div>
                     <div> Things to know</div>
                     <div> Around </div>

@@ -2,19 +2,27 @@ import React from "react";
 import { fetchListings } from "../../actions/listing_actions";
 import ListingsIndexItem from "./listings_item";
 import Map from "../map/map";
+import MapContainer from "../map/map_container";
 
 class ListingIndex extends React.Component{
 
     constructor(props){
         super(props);
+        // this.state = {
+        //     loading:true
+        // }
     }
 
     componentDidMount() {
         this.props.fetchListings()
+        // .then(this.setState({loading:false}))
     }
 
     render(){
+        // debugger
         const { listings } = this.props
+        if (!listings) return null;
+        // debugger
         return (
             <div className="listings-index-container">
                 <div className="listingsindex"> 
@@ -23,7 +31,7 @@ class ListingIndex extends React.Component{
                     ))}
                 </div>
                 <div className="mapcontainerindex">
-                    <Map />
+                    <Map listings={listings} singleListing={false} />
                 </div>
             </div>
 

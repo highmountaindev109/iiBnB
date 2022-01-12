@@ -40,7 +40,7 @@ class EditListingForm extends React.Component{
         // for (let i = 0; i < photos.length; i++) {
         //     formData.append("listing[photos][]", photos[i])
         // }
-        debugger
+        // debugger
         this.props.updateListing(formData, this.state.id)
             .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }

@@ -130,18 +130,6 @@ class CreateListing extends React.Component {
                     </label>
                     <label className="labelListing">
                         <div className="labels1">
-                            Longitude
-                        </div>
-                        <input
-                            className="session-input2 session-input3"
-                            type="text"
-                            value={this.state.longitude}
-                            onChange={this.handleUpdate("longitude")}
-                            required
-                        />
-                    </label>
-                    <label className="labelListing">
-                        <div className="labels1">
                             Latitude
                         </div>
                         <input
@@ -149,6 +137,18 @@ class CreateListing extends React.Component {
                             type="text"
                             value={this.state.latitude}
                             onChange={this.handleUpdate("latitude")}
+                            required
+                        />
+                    </label>
+                    <label className="labelListing">
+                        <div className="labels1">
+                            Longitude
+                        </div>
+                        <input
+                            className="session-input2 session-input3"
+                            type="text"
+                            value={this.state.longitude}
+                            onChange={this.handleUpdate("longitude")}
                             required
                         />
                     </label>
