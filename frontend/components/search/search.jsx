@@ -1,4 +1,5 @@
 import React from "react";
+import updateFilter from "../../actions/filter_actions";
 import { fetchListings } from "../../actions/listing_actions";
 import ListingsIndexItem from "../listings/listings_item";
 import Map from "../map/map";
@@ -9,7 +10,7 @@ class Search extends React.Component{
     }
 
     componentDidMount() {
-        this.props.fetchListings()
+        this.props.updateFilter()
     }
 
     render() {
@@ -19,11 +20,11 @@ class Search extends React.Component{
             <div className="listings-index-container">
                 <div className="listingsindex">
                     {listings.map((listing, i) => (
-                        <ListingsIndexItem key={`${listing.title}${i}`} listing={listing} />
+                        <ListingsIndexItem key={`${listing.title}${i}`} listing={listing} updateFilter={updateFilter} />
                     ))}
                 </div>
                 <div className="mapcontainerindex">
-                    <Map listings={listings} singleListing={false} />
+                    <Map listings={listings} singleListing={false} updateFilter={updateFilter} />
                 </div>
             </div>
         )

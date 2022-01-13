@@ -24,4 +24,11 @@ class Listing < ApplicationRecord
 
     has_many_attached :photos
 
+    def self.in_bounds(bounds)
+        self.where("latitude < ?", bounds[:northEast][:latitude])
+            .where("latitude > ?", bounds[:southWest][:latitude])
+            .where("longitude < ?", bounds[:northEast][:longitude])
+            .where("longitude > ?", bounds[:southWest][:longitude])
+    end
+
 end

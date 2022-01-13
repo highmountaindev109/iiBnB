@@ -1,8 +1,9 @@
 
 export default class MarkerManager {
-    constructor(map) {
+    constructor(map, handleClicker) {
         this.map = map; 
         this.markers = {};
+        this.handleClicker = handleClicker;
         // debugger
     }
 
@@ -12,7 +13,7 @@ export default class MarkerManager {
         listings.forEach(listing => listingObj[listing.id] = listing)
         listings
             .filter(listing => !this.markers[listing.id])
-            .forEach(newListing => this.createMarkerFromListing(newListing))
+            .forEach(newListing => this.createMarkerFromListing(newListing, this.handleClicker))
         Object.keys(this.markers)
             .filter(listingId => !listingObj[listingId])
             .forEach( listingId => this.removeMarker(this.markers[listingId]))
@@ -42,7 +43,7 @@ export default class MarkerManager {
             },
             // icon: mapIcon
         })
-
+        marker.addListener('click', () => this.handleClicker(listing))
         this.markers[marker.listingId] = marker;
     }
 
@@ -51,5 +52,3 @@ export default class MarkerManager {
         delete this.markers[marker.listingId];
     }
 }
-
-// export default MarkerManager
