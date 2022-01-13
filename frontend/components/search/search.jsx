@@ -10,7 +10,7 @@ class Search extends React.Component{
     }
 
     componentDidMount() {
-        this.props.updateFilter()
+        // this.props.updateFilter()
     }
 
     render() {
