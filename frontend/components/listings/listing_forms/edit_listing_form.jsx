@@ -14,8 +14,6 @@ class EditListingForm extends React.Component{
     componentDidMount() {
         this.props.fetchListing(this.props.match.params.listingId)
         .then(() => this.setState (Object.assign({},this.props.listing,{loading:false})))
-        // .fail(console.log(this.state))
-        // .fail(console.log(this.props))
     }
 
     handleUpdate(field) {
@@ -24,9 +22,7 @@ class EditListingForm extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        const { photos } = this.state;
         const formData = new FormData();
-        // formData.append("listing[host_id]", this.state.host_id);
         formData.append("listing[title]", this.state.title);
         formData.append("listing[description]", this.state.description);
         formData.append("listing[address]", this.state.address);
@@ -37,10 +33,6 @@ class EditListingForm extends React.Component{
         formData.append("listing[longitutude]", this.state.longitude);
         formData.append("listing[latitutude]", this.state.latitude);
         formData.append("listing[id]", this.state.id)
-        // for (let i = 0; i < photos.length; i++) {
-        //     formData.append("listing[photos][]", photos[i])
-        // }
-        // debugger
         this.props.updateListing(formData, this.state.id)
             .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
     }
@@ -131,30 +123,6 @@ class EditListingForm extends React.Component{
                             type="number"
                             value={this.state.bathrooms}
                             onChange={this.handleUpdate("bathrooms")}
-                            required
-                        />
-                    </label>
-                    <label className="labelListing">
-                        <div className="labels1">
-                            Longitude
-                        </div>
-                        <input
-                            className="session-input2 session-input3"
-                            type="text"
-                            value={this.state.longitude}
-                            onChange={this.handleUpdate("longitude")}
-                            required
-                        />
-                    </label>
-                    <label className="labelListing">
-                        <div className="labels1">
-                            Latitude
-                        </div>
-                        <input
-                            className="session-input2 session-input3"
-                            type="text"
-                            value={this.state.latitude}
-                            onChange={this.handleUpdate("latitude")}
                             required
                         />
                     </label>

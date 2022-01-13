@@ -8,7 +8,7 @@ export default class MarkerManager {
 
     updateMarkers(listings){
         const listingObj = {}
-        debugger
+        // debugger
         listings.forEach(listing => listingObj[listing.id] = listing)
         listings
             .filter(listing => !this.markers[listing.id])

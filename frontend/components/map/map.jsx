@@ -16,15 +16,15 @@ class Map extends React.Component {
         
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map)
-        debugger
+        // debugger
         if (this.props.singleListing){this.props.fetchListing(this.props.listingId)}
         else {
         this.MarkerManager.updateMarkers(this.props.listings)}
-        debugger
+        // debugger
     }
 
     componentDidUpdate() {
-        debugger;
+        // debugger;
         if (this.props.singleListing) { 
             const targetlistingKey = Object.keys(this.props.listings)[0];
             const targetlisting = this.props.listings[targetlistingKey];
@@ -36,7 +36,7 @@ class Map extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
         return (
             <div id="map" className="map-container" ref={map => this.mapNode = map}> 
             </div>

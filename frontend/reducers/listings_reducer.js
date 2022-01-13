@@ -6,12 +6,12 @@ REMOVE_LISTING,
 const listingsReducer = ( state = {}, action) => {
     Object.freeze(state)
     let newState = Object.assign({},state);
-    debugger
+    // debugger
     switch (action.type) {
         case RECEIVE_LISTINGS:
             return action.listings
         case RECEIVE_LISTING:
-            debugger
+            // debugger
             // newState[action.listing.id] = action.listing
             return Object.assign({},{[action.listing.id]:action.listing})
         case REMOVE_LISTING:

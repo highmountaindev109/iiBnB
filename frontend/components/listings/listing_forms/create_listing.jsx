@@ -5,32 +5,60 @@ class CreateListing extends React.Component {
         super(props);
         this.state = this.props.listing;
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleFormData = this.handleFormData.bind(this)
     }
 
     handleUpdate(field) {
         return e => this.setState({[field]: e.currentTarget.value})
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        const {name, photos} = this.state;
+    handleFormData() {
+        const { name, photos } = this.state;
         const formData = new FormData();
-        formData.append("listing[host_id]", this.state.host_id);
-        formData.append("listing[title]", this.state.title);
-        formData.append("listing[description]", this.state.description);
-        formData.append("listing[address]", this.state.address);
-        formData.append("listing[guest_limit]", this.state.guest_limit);
-        formData.append("listing[price]", this.state.price);
-        formData.append("listing[bedrooms]", this.state.bedrooms);
-        formData.append("listing[bathrooms]", this.state.bathrooms);
-        formData.append("listing[longitude]", this.state.longitude);
-        formData.append("listing[latitude]", this.state.latitude);
+        formData.append("listing[host_id]", this.state.host_id)
+        formData.append("listing[title]", this.state.title)
+        formData.append("listing[description]", this.state.description)
+        formData.append("listing[address]", this.state.address)
+        formData.append("listing[guest_limit]", this.state.guest_limit)
+        formData.append("listing[price]", this.state.price)
+        formData.append("listing[bedrooms]", this.state.bedrooms)
+        formData.append("listing[bathrooms]", this.state.bathrooms)
+        formData.append("listing[longitude]", this.state.longitude)
+        formData.append("listing[latitude]", this.state.latitude)
 
-        for (let i = 0 ; i < photos.length; i++) {
+        for (let i = 0; i < photos.length; i++) {
             formData.append("listing[photos][]", photos[i])
         }
         this.props.createListing(formData)
-        .then( (prop) => this.props.history.push(`/listings/${prop.listing.id}`))
+            .then((prop) => this.props.history.push(`/listings/${prop.listing.id}`))
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        const address = this.state.address;
+        const addressToString = address.split(" ").join("+");
+        const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressToString}&key=${window.googleApiKey}`
+        debugger
+        const response = $.ajax({
+            method: 'get',
+            url: requestUrl
+        })
+
+        let newAddress, newLat, newLong;
+        response.done(() => {
+            console.log(response)
+            newAddress = response.responseJSON.results[0].formatted_address
+            newLat = response.responseJSON.results[0].geometry.location.lat
+            newLong = response.responseJSON.results[0].geometry.location.lng
+            this.setState({
+                address: newAddress,
+                latitude: newLat,
+                longitude: newLong,
+            })
+            // debugger
+            // console.log(this.state)
+        }).then(() => this.handleFormData())
     }
 
     displayErrors() {
@@ -128,7 +156,7 @@ class CreateListing extends React.Component {
                             required
                     />
                     </label>
-                    <label className="labelListing">
+                    {/* <label className="labelListing">
                         <div className="labels1">
                             Latitude
                         </div>
@@ -151,7 +179,7 @@ class CreateListing extends React.Component {
                             onChange={this.handleUpdate("longitude")}
                             required
                         />
-                    </label>
+                    </label> */}
                     <label className="labelListing"> 
                         <div className="labels1">
                             Description

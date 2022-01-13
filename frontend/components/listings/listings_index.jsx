@@ -15,14 +15,11 @@ class ListingIndex extends React.Component{
 
     componentDidMount() {
         this.props.fetchListings()
-        // .then(this.setState({loading:false}))
     }
 
     render(){
-        // debugger
         const { listings } = this.props
         if (!listings) return null;
-        // debugger
         return (
             <div className="listings-index-container">
                 <div className="listingsindex"> 

@@ -10,6 +10,7 @@ import CreateListingContainer from "./listings/listing_forms/create_listing_cont
 import Map from "./map/map";
 import edit_listing_container from "./listings/listing_forms/edit_listing_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
+import search_container from "./search/search_container";
 
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
         <ProtectedRoute exact path="/new/listing" component={CreateListingContainer} />
         <Route exact path="/listings" component={listings_index_container} />
         <Route exact path="/map" component={Map} />
+        <Route path="/search" component={search_container} />
     </Switch>
     <footer><Footer /></footer>
     </div>
