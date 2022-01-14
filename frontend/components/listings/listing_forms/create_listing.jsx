@@ -46,7 +46,6 @@ class CreateListing extends React.Component {
 
         let newAddress, newLat, newLong;
         response.done(() => {
-            console.log(response)
             newAddress = response.responseJSON.results[0].formatted_address
             newLat = response.responseJSON.results[0].geometry.location.lat
             newLong = response.responseJSON.results[0].geometry.location.lng
