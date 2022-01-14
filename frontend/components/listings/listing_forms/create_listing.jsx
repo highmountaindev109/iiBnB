@@ -39,7 +39,6 @@ class CreateListing extends React.Component {
         const address = this.state.address;
         const addressToString = address.split(" ").join("+");
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressToString}&key=${window.googleApiKey}`
-        // debugger
         const response = $.ajax({
             method: 'get',
             url: requestUrl
@@ -56,8 +55,6 @@ class CreateListing extends React.Component {
                 latitude: newLat,
                 longitude: newLong,
             })
-            // debugger
-            // console.log(this.state)
         }).then(() => this.handleFormData())
     }
 
@@ -78,7 +75,6 @@ class CreateListing extends React.Component {
                 <div className="form-type-container">
                     <div className="form-type-title"> {this.props.formType} </div>
                 </div>
-                {/* <h3 className="errorsh3"> {this.displayErrors()} </h3> */}
                     <label className="labelListing"> 
                     <div className="labels1">
                         Title
@@ -109,7 +105,6 @@ class CreateListing extends React.Component {
                             Guest Limits
                         </div>
                     <input
-                        // id='lname'
                             className="session-input2  session-input3" 
                         type="number"
                         value={this.state.guest_limit}
@@ -122,7 +117,6 @@ class CreateListing extends React.Component {
                             Price
                         </div> 
                     <input
-                        // id='lname'
                         className="session-input2 session-input3" 
                         type="number"
                         value={this.state.price}
@@ -135,7 +129,6 @@ class CreateListing extends React.Component {
                             Bedrooms
                         </div> 
                     <input
-                        // id='lname'
                             className="session-input2  session-input3" 
                         type="number"
                         value={this.state.bedrooms}
@@ -148,7 +141,6 @@ class CreateListing extends React.Component {
                             Bathrooms
                         </div> 
                     <input
-                        // id='lname'
                             className="session-input2  session-input3" 
                         type="number"
                         value={this.state.bathrooms}
@@ -156,30 +148,6 @@ class CreateListing extends React.Component {
                             required
                     />
                     </label>
-                    {/* <label className="labelListing">
-                        <div className="labels1">
-                            Latitude
-                        </div>
-                        <input
-                            className="session-input2 session-input3"
-                            type="text"
-                            value={this.state.latitude}
-                            onChange={this.handleUpdate("latitude")}
-                            required
-                        />
-                    </label>
-                    <label className="labelListing">
-                        <div className="labels1">
-                            Longitude
-                        </div>
-                        <input
-                            className="session-input2 session-input3"
-                            type="text"
-                            value={this.state.longitude}
-                            onChange={this.handleUpdate("longitude")}
-                            required
-                        />
-                    </label> */}
                     <label className="labelListing"> 
                         <div className="labels1">
                             Description

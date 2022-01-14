@@ -26,21 +26,17 @@ class Map extends React.Component {
             zoom: 14,
             gestureHandling: "greedy"
         };
-        debugger
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleClicker.bind(this))
-        // debugger
         if (this.props.singleListing){
             this.props.fetchListing(this.props.listingId)
         }
         else {
         this.registerListeners();
         this.MarkerManager.updateMarkers(this.props.listings)}
-        // debugger
     }
 
     componentDidUpdate() {
-        // debugger;
         if (this.props.singleListing) { 
             const targetlistingKey = Object.keys(this.props.listings)[0];
             const targetlisting = this.props.listings[targetlistingKey];
@@ -53,10 +49,8 @@ class Map extends React.Component {
     }
 
     registerListeners() {
-        // debugger
         google.maps.event.addListener( this.map, 'idle', () => {
             const { north, south, east, west } = this.map.getBounds().toJSON();
-            // debugger
             const bounds = {
                 northEast: { latitude: north, longitude: east },
                 southWest: { latitude: south, longitude: west }
@@ -70,7 +64,6 @@ class Map extends React.Component {
     }
 
     render() {
-        // debugger
         return (
             <div id="map" className="map-container" ref={map => this.mapNode = map}> 
             </div>

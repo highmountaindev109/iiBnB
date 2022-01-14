@@ -33,7 +33,6 @@ export const fetchListings = (bounds) => dispatch => (
 )
 
 export const fetchListing = listingId => dispatch => {
-    // debugger
     return (
     ListingAPIUtil.fetchListing(listingId)
         .then(listing => dispatch(receiveListing(listing)),

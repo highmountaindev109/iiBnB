@@ -4,12 +4,10 @@ export default class MarkerManager {
         this.map = map; 
         this.markers = {};
         this.handleClicker = handleClicker;
-        // debugger
     }
 
     updateMarkers(listings){
         const listingObj = {}
-        // debugger
         listings.forEach(listing => listingObj[listing.id] = listing)
         listings
             .filter(listing => !this.markers[listing.id])
@@ -29,7 +27,6 @@ export default class MarkerManager {
         // }
 
         let position = new google.maps.LatLng(listing.latitude, listing.longitude);
-        // debugger
         let marker = new google.maps.Marker({
             title: listing.title,
             position,
@@ -41,7 +38,6 @@ export default class MarkerManager {
                 font: "8px",
                 color: "white"
             },
-            // icon: mapIcon
         })
         marker.addListener('click', () => this.handleClicker(listing))
         this.markers[marker.listingId] = marker;

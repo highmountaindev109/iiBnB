@@ -16,7 +16,6 @@ class Search extends React.Component{
 
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.location !== this.props.match.params.location) {
-            debugger
         }
     }
 

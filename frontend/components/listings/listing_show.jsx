@@ -32,7 +32,6 @@ class Listing extends React.Component {
     render() {
         const { listing } = this.props
         if (!listing) return (<h1> Loading </h1>);
-        // debugger
 
         return(
             <div className="lister">
