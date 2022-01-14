@@ -13,16 +13,16 @@
     display: flex;
     flex-direction: column;
     margin-top: 78px;
-    border: solid purple 3px;
+    // border: solid purple 3px;
     width: 100%;
     // background-image: linear-gradient(to left, #9fd5f1, #fceeb5);
 }
 
 .listingshowpage{
     // height: 110vh;
-    width: 90vw;
-    border: 2px solid black;
-    margin-left: 5vw;
+    width: 80vw;
+    // border: 2px solid black;
+    margin-left: 10vw;
     // margin-top: 78px;
 }
 .title-container{
@@ -46,6 +46,7 @@
 
 .details{
     height: 26px;
+    display: flex;
 }
 
 .listingphotos {
@@ -104,20 +105,20 @@
 .middlelisting{
     display: inline-flex;
     justify-content: space-evenly;
-    border: red 2px solid;
+    // border: red 2px solid;
     width: 100%;
 }
 
 .listingleft{
     width: 100%;
-    border: springgreen 2px solid;
+    // border: springgreen 2px solid;
     // height: 200px;
     // flex: 1;
     flex: 2;
 }
 .listingright{
     width: 100%;
-    border: thistle 2px solid;
+    // border: thistle 2px solid;
     flex: 1;
 }
 
@@ -321,7 +322,7 @@
 }
 
 .listingright {
-    display: flex;
+    display: flex; 
     // align-items: flex-start;
 
 }
@@ -333,4 +334,33 @@
     // object-fit: contain;
     top: 10%;
 
+}
+
+.lledit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 15px;
+}   
+
+.editbutton {
+    text-decoration: none;
+    // border: 2px red solid;
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    box-shadow: 2px 1px 7px 2px lightgray;
+}
+
+.editbutton:hover{
+    color: black;
+    background-color: rgb(233, 231, 231);
+    padding: 10px;
+}
+
+.rstarrate {
+    display: flex;
 }

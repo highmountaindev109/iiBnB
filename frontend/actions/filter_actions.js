@@ -12,7 +12,7 @@ const changeFilter = (filter, value) => {
 
 const updateFilter = (filter, value) => (dispatch, getState) => {
     dispatch(changeFilter(filter,value));
-    return fetchListings(getState().ui.filters)(dispatch);
+    return fetchListings(getState().ui.filter)(dispatch);
 }
 
 export default updateFilter;

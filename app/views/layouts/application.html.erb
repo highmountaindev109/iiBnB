@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google_maps_api_key}" %>
+    
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-    
     <script type="text/javascript">
       window.splashURL = "<%= image_url('unsplash1.jpg') %>"; // change this
       window.logo_url = "<%= image_url('iibi.png') %>";
@@ -18,6 +17,7 @@
       window.img1_url = "<%= image_url('noimage.png') %>"
       window.googleApiKey = "<%= Rails.application.credentials.google_maps_api_key %>" 
     </script>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google_maps_api_key}&libraries=places" %>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Montserrat:wght@300&display=swap');
     </style>

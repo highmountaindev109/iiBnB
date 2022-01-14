@@ -39,7 +39,7 @@ class CreateListing extends React.Component {
         const address = this.state.address;
         const addressToString = address.split(" ").join("+");
         const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressToString}&key=${window.googleApiKey}`
-        debugger
+        // debugger
         const response = $.ajax({
             method: 'get',
             url: requestUrl

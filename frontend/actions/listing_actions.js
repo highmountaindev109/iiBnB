@@ -25,8 +25,8 @@ const receiveErrors = errors => ({
     errors
 })
 
-export const fetchListings = () => dispatch => (
-    ListingAPIUtil.fetchListings()
+export const fetchListings = (bounds) => dispatch => (
+    ListingAPIUtil.fetchListings(bounds)
         .then(listings => dispatch(receiveListings(listings)),
             error => dispatch(receiveErrors(error.responseJSON))
     )

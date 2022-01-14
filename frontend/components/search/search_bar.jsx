@@ -1,7 +1,7 @@
 import React from "react";
-import { FaGoogle } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 import { withRouter } from "react-router-dom";
-
+import { FaSearch } from "react-icons/fa/index";
 class SearchBar extends React.Component {
     constructor(props){
         super(props)
@@ -9,11 +9,13 @@ class SearchBar extends React.Component {
         this.state={
             query: "",
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
+
     }
 
     componentDidMount() {
-        const searchBarForm = document.querySelector("search_bar_item")
-        const autocomplete = new FaGoogle.maps.places.Autocomplete(searchBarForm)
+        const searchBarForm = document.querySelector(".search_bar_item")
+        this.autocomplete = new google.maps.places.Autocomplete(searchBarForm);
     }
 
     handleUpdate(field) {
@@ -22,25 +24,19 @@ class SearchBar extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        const address = this.state.address;
-        const addressToString = address.split(" ").join("+");
-        const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${addressToString}&key=${window.googleApiKey}`
+        let place = this.autocomplete.getPlace();
+        let fm = place.formatted_address
+        const queryToString = fm.split(" ").join("+");
+        const requestUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${queryToString}&key=${window.googleApiKey}`
         const response = $.ajax({
             method: 'get',
             url: requestUrl
         })
-
-        let newAddress, newLat, newLong;
+        let newLat, newLong;
         response.done(() => {
-            console.log(response)
-            newAddress = response.responseJSON.results[0].formatted_address
             newLat = response.responseJSON.results[0].geometry.location.lat
             newLong = response.responseJSON.results[0].geometry.location.lng
-            this.setState({
-                address: newAddress,
-                latitude: newLat,
-                longitude: newLong,
-            })
+            this.props.history.push(`/listings?${newLat}&${newLong}`)
         })
     }
 
@@ -48,29 +44,25 @@ class SearchBar extends React.Component {
     render() {
         return(
             <div className="navbar_search_container">
-                <form className="search_form">
+                <form className="search_form" onSubmit={this.handleSubmit}>
                     <input
                         type="text"
-                        value="this.state.query"
                         onChange={this.handleUpdate("query")}
                         className="search_bar_item"
-                        placeholder=" Search New York City"
+                        placeholder="Try New York City"
+                        id="autocomplete"
                     />
 
                     <button
                         type="submit"
                         className="icon"
-                    />
+                    > <FaSearch /> </button>
 
                 </form>
             </div>
         )
     }
 
-
-
-
-
 }
 
-export default SearchBar
+export default withRouter(SearchBar)

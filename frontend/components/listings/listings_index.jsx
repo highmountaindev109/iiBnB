@@ -8,9 +8,6 @@ class ListingIndex extends React.Component{
 
     constructor(props){
         super(props);
-        // this.state = {
-        //     loading:true
-        // }
     }
 
     componentDidMount() {
@@ -22,6 +19,7 @@ class ListingIndex extends React.Component{
         if (!listings) return null;
         return (
             <div className="listings-index-container">
+                <div className="counter"> {this.props.listings.length}+ listings in the area </div>
                 <div className="listingsindex"> 
                     {listings.map ((listing,i) => (
                         <ListingsIndexItem key={`${listing.title}${i}`} listing={listing} />

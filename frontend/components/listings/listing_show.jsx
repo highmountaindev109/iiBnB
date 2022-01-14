@@ -9,6 +9,8 @@ import {CgSmartHomeWashMachine} from "react-icons/cg/index"
 import {AiOutlineCar} from "react-icons/ai/index"
 import Map from "../map/map";
 import MapContainer from "../map/map_container";
+import { AiFillStar } from "react-icons/ai";
+
 class Listing extends React.Component {
     constructor(props) {
         super(props)
@@ -28,7 +30,6 @@ class Listing extends React.Component {
     }
 
     render() {
-        // debugger
         const { listing } = this.props
         if (!listing) return (<h1> Loading </h1>);
         // debugger
@@ -38,7 +39,11 @@ class Listing extends React.Component {
                 <div className="listingshowpage">
                     <div className="title-container">
                         <div className="title"> {listing.title}</div>
-                        <div className="details">5.00 Star • 420 Reviews • {listing.address} </div>
+                        <div className="details">
+                            <div className="rstarrate">
+                                5.00 <div className="rstar"><AiFillStar /> </div>
+                            </div> 
+                         • 420 Reviews • {listing.address} </div>
                     </div>
                     <div className="listingphotos"> 
                         <div className="photo1">
@@ -64,8 +69,11 @@ class Listing extends React.Component {
                     <div className="middlelisting"> 
                         <div className="listingleft">
                             <div className="listingleft1">
-                                <div className="lltitle">Entire cabin hosted
+                                <div className="lltitle">Entire place hosted
                                     <div className="lldetail"> {listing.guest_limit} guests • {listing.bedrooms} beds • {listing.bathrooms} baths</div>
+                                </div>
+                                <div className="lledit">
+                                    <Link to={`${listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
                                 </div>
                                 <div className="llprofile">
                                     <img src={listing.photoUrl} className="llprofile"/>
@@ -171,20 +179,6 @@ class Listing extends React.Component {
                     <div> Reviews Container</div>
                     <div> <MapContainer listings={listing} singleListing={true}/>  </div>
                     <div> Host Info</div>
-                    <div> Things to know</div>
-                    <div> Around </div>
-                    {/* < br/>
-                    <div style={{color:"green", fontSize: "20px"} }> 
-                        Title : {listing.title} <br />
-                        Address: {listing.address} <br />
-                        Description: {listing.description} <br />
-                        Price: ${listing.price} <br />
-                        Guests: {listing.guest_limit} <br />
-                        Bedrooms: {listing.bedrooms} <br />
-                        Bathrooms: {listing.bathrooms} <br />
-                        Host Name: {listing.host.first_name} {listing.host.last_name} <br />
-                        Host Email: {listing.host.email} <br />
-                    </div> */}
                 </div>
             </div>
         );

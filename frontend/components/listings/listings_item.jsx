@@ -8,7 +8,7 @@ const ListingsIndexItem = ({listing}) => (
         <div className="right-index-item">
             <div className="listitle">
                 <div className="listitlecontainer">
-                    <div className="listitle1">Entire place on East Coast</div>
+                    <div className="listitle1">Entire place</div>
                     <div className="listitle2">{listing.title}</div>
                 </div>
                 <div>

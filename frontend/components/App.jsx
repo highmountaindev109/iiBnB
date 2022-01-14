@@ -24,7 +24,7 @@ const App = () => (
         <ProtectedRoute exact path="/listings/:listingId/edit" component={edit_listing_container} />
         <Route path="/listings/:listingId" component={listing_show_container} />
         <ProtectedRoute exact path="/new/listing" component={CreateListingContainer} />
-        <Route exact path="/listings" component={listings_index_container} />
+        <Route exact path="/listings" component={search_container} />
         <Route exact path="/map" component={Map} />
         <Route path="/search" component={search_container} />
     </Switch>
