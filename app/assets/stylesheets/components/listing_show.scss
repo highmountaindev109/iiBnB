@@ -92,6 +92,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     object-fit: cover;
+    background-position: center;
 }
 
 .photo4 {
@@ -155,9 +156,10 @@
     // border: black 1px solid;
     border-radius: 60px;
     margin-right: 2%;
-        background-image: image-url('noimage.svg');
+    background-image: image-url('noimage.svg');
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
 }
 
 .listingleft2{
@@ -228,6 +230,7 @@
     background-image: image-url('noimage.svg');
     background-repeat: no-repeat;
     background-size: 80%;
+    background-position: center;
 }
 
 .offers,

@@ -21,11 +21,13 @@ class Map extends React.Component {
             longitude = this.props.longitude}
         latitude ||= 40.706064;
         longitude ||= -74.008782
+        debugger
         const mapOptions = {
             center: { lat: parseFloat(latitude), lng: parseFloat(longitude)}, //NYC Coords
             zoom: 14,
             gestureHandling: "greedy"
         };
+        debugger
         this.map = new google.maps.Map(this.mapNode, mapOptions);
         this.MarkerManager = new MarkerManager(this.map, this.handleClicker.bind(this))
         if (this.props.singleListing){

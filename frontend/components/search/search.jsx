@@ -4,6 +4,7 @@ import { fetchListings } from "../../actions/listing_actions";
 import ListingsIndexItem from "../listings/listings_item";
 import Map from "../map/map";
 import MapContainer from "../map/map_container";
+import { withRouter } from "react-router-dom";
 
 class Search extends React.Component{
     constructor(props){
@@ -15,8 +16,8 @@ class Search extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        if (prevProps.match.params.location !== this.props.match.params.location) {
-        }
+        // if (prevProps.location !== this.props.location) {
+        // }
     }
 
     render() {
@@ -41,4 +42,4 @@ class Search extends React.Component{
 
 }
 
-export default Search;
+export default withRouter(Search);

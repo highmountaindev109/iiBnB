@@ -68,7 +68,7 @@ class Listing extends React.Component {
                     <div className="middlelisting"> 
                         <div className="listingleft">
                             <div className="listingleft1">
-                                <div className="lltitle">Entire place hosted
+                                <div className="lltitle">Entire place hosted by {listing.host.first_name}
                                     <div className="lldetail"> {listing.guest_limit} guests • {listing.bedrooms} beds • {listing.bathrooms} baths</div>
                                 </div>
                                 <div className="lledit">
