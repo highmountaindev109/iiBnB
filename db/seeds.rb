@@ -55,7 +55,7 @@ listing13 = Listing.create!(host_id: 2, title: "The Michael", address: "Bay Ridg
 listing14 = Listing.create!(host_id: 2, title: "The Zoo", address: "Staten Island Zoo", description: "TBA", guest_limit: 10, price: 720, bedrooms: 10, bathrooms: 10, latitude: 40.624198, longitude: -74.0114123)
 listing15 = Listing.create!(host_id: 1, title: "The Grave", address: "2 Gravesend", description: "TBA", guest_limit: 1, price: 20, bedrooms: 1, bathrooms: 1, latitude: 40.592709, longitude: -73.967536)
 listing16 = Listing.create!(host_id: 4, title: "The Mission", address: "1 Mission District", description: "TBA", guest_limit: 8, price: 380, bedrooms: 5, bathrooms: 3, latitude: 37.757136, longitude: -122.414943)
-listing17 = Listing.create!(host_id: 5, title: "The Sirloin", address: "9 Tenderloin", description: "TBA", guest_limit: 9, price: 490, bedrooms: 8, bathrooms: 3, latitude: 39.785116, longitude: -122.414426)
+listing17 = Listing.create!(host_id: 5, title: "The Sirloin", address: "9 Tenderloin", description: "TBA", guest_limit: 9, price: 490, bedrooms: 8, bathrooms: 3, latitude: 37.785116, longitude: -122.414426)
 listing18 = Listing.create!(host_id: 5, title: "The Mighty Tree", address: "Heron's Head Park", description: "TBA", guest_limit: 7, price: 190, bedrooms: 3, bathrooms: 1, latitude: 37.737592, longitude: -122.372606)
 
 listingphoto1 = URI.open('https://iibnb-seeds.s3.amazonaws.com/cb/kelli-mcclintock-d21p_xkPoMA-unsplash.jpg')
