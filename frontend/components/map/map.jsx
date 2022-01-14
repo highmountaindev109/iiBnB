@@ -11,11 +11,16 @@ class Map extends React.Component {
     }
 
     componentDidMount() {
-        let {latitude,longitude} = this.props;
-        debugger
+        let latitude;
+        let longitude;
+        if (this.props.singleListing) {
+            latitude = this.props.listings[0].latitude;
+            longitude = this.props.listings[0].longitude;
+        } else {
+            latitude = this.props.latitude;
+            longitude = this.props.longitude}
         latitude ||= 40.706064;
-        longitude ||= -74.008782 ;
-        debugger
+        longitude ||= -74.008782
         const mapOptions = {
             center: { lat: parseFloat(latitude), lng: parseFloat(longitude)}, //NYC Coords
             zoom: 14,
@@ -61,7 +66,7 @@ class Map extends React.Component {
     }
 
     handleClicker(listing){
-        this.props.history.push(`listings/${listing.id}`)
+        this.props.history.push(`/listings/${listing.id}`)
     }
 
     render() {
