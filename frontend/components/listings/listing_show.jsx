@@ -15,7 +15,7 @@ class Listing extends React.Component {
     constructor(props) {
         super(props)
         // this.state = {
-        //     loading: true,
+        //     loading:true
         // }
     }
 
@@ -32,7 +32,6 @@ class Listing extends React.Component {
     render() {
         const { listing } = this.props
         if (!listing) return (<h1> Loading </h1>);
-
         return(
             <div className="lister">
                 <div className="listingshowpage">
@@ -68,7 +67,7 @@ class Listing extends React.Component {
                     <div className="middlelisting"> 
                         <div className="listingleft">
                             <div className="listingleft1">
-                                <div className="lltitle">Entire place hosted by {listing.host.first_name}
+                                <div className="lltitle">Entire place available
                                     <div className="lldetail"> {listing.guest_limit} guests • {listing.bedrooms} beds • {listing.bathrooms} baths</div>
                                 </div>
                                 <div className="lledit">
@@ -175,9 +174,9 @@ class Listing extends React.Component {
                             <div> <img src={window.booking_url} alt="" className="booker"/></div>
                         </div>
                     </div>
-                    <div> Reviews Container</div>
+                    {/* <div> Reviews Container</div> */}
                     <div> <MapContainer listings={listing} singleListing={true}/>  </div>
-                    <div> Host Info</div>
+                    {/* <div> Host Info</div> */}
                 </div>
             </div>
         );
