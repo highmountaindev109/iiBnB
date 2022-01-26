@@ -17,6 +17,7 @@
       window.map_url = "<%= image_url('map1.png') %>"
       window.img1_url = "<%= image_url('noimage.png') %>"
       window.googleApiKey = "<%= Rails.application.credentials.google_maps_api_key %>" 
+      window.meta = "<%= image_url('metaSS.png') %>"
     </script>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google_maps_api_key}&libraries=places" %>
     <style>
