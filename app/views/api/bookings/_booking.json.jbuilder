@@ -1,0 +1,1 @@
+json.extract! booking, :id, :listing_id, :guest_id, :number_of_guests, :check_in_date, :check_out_date
