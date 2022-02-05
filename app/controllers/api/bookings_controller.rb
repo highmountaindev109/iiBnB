@@ -32,7 +32,7 @@ class Api::BookingsController < ApplicationController
         if @booking
             @booking.destroy
         else
-            render json: @booking.errors.full_messages, status: 404
+            render json: @booking.errors.full_message, status: 404
         end
     end
 
