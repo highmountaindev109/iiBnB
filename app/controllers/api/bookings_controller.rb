@@ -2,7 +2,7 @@ class Api::BookingsController < ApplicationController
     before_action :ensure_logged_in
 
     def index 
-        @bookings = Booking.all
+        @bookings = Booking.includes(:listing).where(guest_id: current_user.id)
     end
 
     def show
