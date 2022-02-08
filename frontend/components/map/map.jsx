@@ -24,7 +24,7 @@ class Map extends React.Component {
         // debugger
         const mapOptions = {
             center: { lat: parseFloat(latitude), lng: parseFloat(longitude)}, //NYC Coords
-            zoom: 14,
+            zoom: 12,
             gestureHandling: "greedy"
         };
         // debugger

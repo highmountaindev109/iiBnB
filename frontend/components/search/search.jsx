@@ -16,8 +16,9 @@ class Search extends React.Component{
     }
 
     componentDidUpdate(prevProps) {
-        // if (prevProps.location !== this.props.location) {
-        // }
+        if (prevProps.location !== this.props.location) {
+        window.location.reload()
+        }
     }
 
     render() {

@@ -14,9 +14,10 @@ import { AiFillStar } from "react-icons/ai";
 class Listing extends React.Component {
     constructor(props) {
         super(props)
-        // this.state = {
-        //     loading:true
-        // }
+        // debugger
+        this.state = {
+            user: this.props.user
+        }
     }
 
     componentDidMount() {
@@ -27,6 +28,19 @@ class Listing extends React.Component {
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.listingId !== this.props.match.params.listingId){
         this.props.fetchListing(this.props.match.params.listingId)}
+    }
+
+    editlisting() {
+        // debugger
+        if (this.props.user[1].id === this.props.listing.host_id){
+            return (                                
+                <Link to={`${this.props.listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
+            )
+        } else {
+            return (
+                <></>
+            )
+        }
     }
 
     render() {
@@ -71,7 +85,7 @@ class Listing extends React.Component {
                                     <div className="lldetail"> {listing.guest_limit} guests • {listing.bedrooms} beds • {listing.bathrooms} baths</div>
                                 </div>
                                 <div className="lledit">
-                                    <Link to={`${listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
+                                    {this.editlisting()}
                                 </div>
                                 <div className="llprofile">
                                     <img src={listing.photoUrl} className="llprofile"/>
@@ -164,10 +178,10 @@ class Listing extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                            <div className="calendar"> Calendar</div>
+                            {/* <div className="calendar"> Calendar</div>
                             <div className="calendar-container">
                                 <img src={window.calendar_url} alt="" className="calendar-item" />
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className="listingright">

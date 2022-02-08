@@ -106,15 +106,16 @@
     height: 100vh;
     position: -webkit-sticky;
     position: sticky;
-    top: 0;
+    top: 75px;
 }
 
 .counter {
-    width: 50%;
+    width: 60%;
     border: 2xp solid red;
     margin-left: 20px;
     font-size: 26px;
     font-weight: bolder;
+    margin-top: 20px;
 }
 
 .listingsindexleft {
