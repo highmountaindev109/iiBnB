@@ -11,6 +11,7 @@ import Map from "./map/map";
 import edit_listing_container from "./listings/listing_forms/edit_listing_container";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import search_container from "./search/search_container";
+import trips_container from "./trips/trips_container";
 
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
         <Route exact path="/listings" component={search_container} />
         <Route exact path="/map" component={Map} />
         <Route path="/search" component={search_container} />
+        <Route exact path ="/trips" component={trips_container}/>
     </Switch>
     <footer><Footer /></footer>
     </div>
