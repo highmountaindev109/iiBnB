@@ -1,3 +1,14 @@
 .trip-container {
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.bookings-container {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
 }

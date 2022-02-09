@@ -33,7 +33,7 @@ class Menu extends React.Component {
         return(
         this.props.currentUser ? (
             <div className="menu-item">
-                <button className="menu-button">{this.props.currentUser.first_name}'s Profile (TBA)</button>
+                <button className="menu-button"> <a href='#/trips'> {this.props.currentUser.first_name}'s Profile (TBA)</a></button>
                 {/* <button className="menu-button" > Messages </button> */}
                 {/* <button className="menu-button" > Reservations </button> */}
                 <button className="menu-button" > <a href='#/new/listing'> Create Listing </a></button>

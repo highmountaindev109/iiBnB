@@ -9,25 +9,38 @@ class Trips extends React.Component{
 
     componentDidMount() {
         this.props.fetchBookings()
-        debugger
     }
 
     render(){
         if (this.props.bookings === 0) {
             return (<div>Loading</div>)
         }
-        debugger
+        // debugger
         return (
             <div className="trip-container">
                 Trips
-                <br />
                 {this.props.bookings.map ((booking,i) => (
-                    `
-                    booking_id: ${booking.id}, 
-                    number of guests: ${booking.number_of_guests},
-                    check-in-date: ${booking.check_in_date},
-                    check-out-date: ${booking.check_out_date}`
-                ))}
+                    <div className="bookings-container" key={i} >
+                        <div>
+                            <img src={booking.listingPhoto} alt="" className="indexphoto"/>
+                        </div>
+                        <div>
+                            Your host: {booking.host.first_name}
+                        </div>
+                        <div>Booking Id: {booking.id}</div>
+                        <div>
+                        number of guests: {booking.number_of_guests}
+                        </div>
+                        <div>
+                        Check-in-date:  {(new Date(booking.check_in_date)).toLocaleDateString("en-us", {month: 'long', day: 'numeric', weekday:'long', year: 'numeric'})}
+                        </div>
+                        <div>
+                        Check-out-date: {(new Date(booking.check_out_date)).toLocaleDateString("en-us", {month: 'long', day: 'numeric', weekday:'long', year: 'numeric'})}
+                        </div>
+                    </div>
+                )
+            )
+        }
             </div>
         )}
 
