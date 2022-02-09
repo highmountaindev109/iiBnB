@@ -31,16 +31,17 @@ class Listing extends React.Component {
     }
 
     editlisting() {
-        // debugger
-        if (this.props.user[1].id === this.props.listing.host_id){
-            return (                                
-                <Link to={`${this.props.listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
-            )
+        if (Object.keys(this.props.user).length === 0) {
+            return (<> </>)
         } else {
-            return (
-                <></>
-            )
+            // debugger
+            if (this.props.user && (this.props.user[1].id === this.props.listing.host_id)){
+                return (                                
+                    <Link to={`${this.props.listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
+                )
+            } 
         }
+
     }
 
     render() {
