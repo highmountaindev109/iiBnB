@@ -7,14 +7,16 @@
     justify-content: space-between;
     align-items: center;
     // background-image: linear-gradient(to right, #9fd5f1, #fceeb5);
-    width: 100vw;
+    width: 80vw;
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
     height: 78px;
     z-index: 100;
     border-bottom: 2px lightgray solid;
-    background-color: whitesmoke;
+    background-color: white;
+    margin-left: 10vw;
+    
 }
 
 .nav-bar-right{
@@ -22,7 +24,7 @@
     display: flex;
     align-items: flex-end;
     // width: 15vw;
-    margin-right: 3%;
+    // margin-right: 3%;
 }
 
 .nav-bar-middle{
@@ -37,7 +39,7 @@
 
 .nav-bar-left {
     display: inline-flex;
-    margin: 20px;
+    // margin: 20px;
 }
 
 .icon {
@@ -55,7 +57,7 @@
     font-size: 30px;
     font-weight: 900;
     text-shadow: 2px 2px gray;
-    margin-left: 20%;
+    // margin-left: 20%;
     color: #eeddc9;
     display: inline-flex;
     align-items: center;

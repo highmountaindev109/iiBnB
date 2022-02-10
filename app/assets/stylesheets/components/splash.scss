@@ -1,6 +1,6 @@
 .splash {
     height: 91vh;
-    width: 100vw;
+    width: 80vw;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -8,6 +8,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: 78px;
+    margin-top: 78px;
+    margin-left: 10vw;
+    // border-radius: 5%;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
 
 }
 
