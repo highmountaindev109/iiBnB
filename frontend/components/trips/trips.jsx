@@ -1,14 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {MdFreeCancellation} from "react-icons/md/index"
 class Trips extends React.Component{
 
     constructor(props){
         super(props);
         this.HandleDeleteBooking = this.HandleDeleteBooking.bind(this);
+        this.noTrips = this.noTrips.bind(this)
+
+        this.state = {
+            loading:true
+        }
     }
 
     componentDidMount() {
-        this.props.fetchBookings()
+        this.props.fetchBookings().then(() => this.setState({loading:false}))
     }
 
     HandleDeleteBooking(e) {
@@ -18,16 +24,11 @@ class Trips extends React.Component{
         .then(() => this.props.fetchBookings())
     }
 
-    render(){
-        if (this.props.bookings === 0) {
-            return (<div>Loading</div>)
-        }
+    noTrips(){
         // debugger
-        return (
-            <div className="trip-container">
-                <div className="trip-category"> Trips </div>
-                <div className="trips-item">
-                    
+        return (this.props.bookings.length > 0) ? (   
+        <div className="trip-splash">            
+        <div className="trips-item">
                 {this.props.bookings.map ((booking,i) => (
                     <div className="bookings-container" key={i} >
                         <Link to={`/listings/${booking.listing.id}`}>
@@ -52,19 +53,51 @@ class Trips extends React.Component{
                          </Link>
                         <div className="trips-right">
                             <button onClick={this.HandleDeleteBooking} value={booking.id}>
+                                <MdFreeCancellation className="trip-del-btn"/> 
+                                <div className="trip-del-btn-text">
                                 Cancel
-                            <br/> 
+                                <br/>
                                 Booking
+                                </div>
                             </button>
                         </div>
                     </div>
                 )
             )
         }
-                </div>
+        </div>
+        </div>
+        ) : (
+            <div className="no-trips trip-splash" id="notrips-splash">
+                <h1 className="flexible_text" id="trips-text">
+                You have no trips planned yet! 
+                <br />
+                Check out some listings to reserve for your next trip!
+                <br />
+                </h1>
+                        <div className="button-wrapper" id="trip-button">
+                            <Link to={`/listings`} className="flexible_button"> Let's go! </Link>
+                        </div>
+                    {/* <div className="trip-splash2"> */}
+
+                    {/* </div> */}
+            </div>
+        )
+    }
+
+    render(){
+        if (this.state.loading) {
+            return (<div></div>)
+        }
+        // debugger
+        return (
+            <div className="trip-container">
+                <div className="trip-category"> Trips </div>
+                {/* <div className="trip-splash"> </div> */}
+                    {this.noTrips()}
             </div>
         )}
-
+            
 }
 
 export default Trips;

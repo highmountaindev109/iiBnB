@@ -28,7 +28,7 @@ const App = () => (
         <Route exact path="/listings" component={search_container} />
         <Route exact path="/map" component={Map} />
         <Route path="/search" component={search_container} />
-        <Route exact path ="/trips" component={trips_container}/>
+        <ProtectedRoute exact path ="/trips" component={trips_container}/>
     </Switch>
     <footer><Footer /></footer>
     </div>
