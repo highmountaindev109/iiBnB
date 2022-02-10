@@ -9,7 +9,7 @@ const mSTP = ({entities, session}) => ({
 
 const mDTP = dispatch => ({
     fetchBookings: () => dispatch(fetchBookings()),
-    deleteBooking: () => dispatch(deleteBooking(bookingId))
+    deleteBooking: (bookingId) => dispatch(deleteBooking(bookingId))
 })
 
 export default withRouter(connect(mSTP, mDTP)(Trips))

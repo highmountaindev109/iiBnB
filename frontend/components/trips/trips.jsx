@@ -1,14 +1,21 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 class Trips extends React.Component{
 
     constructor(props){
         super(props);
-
+        this.HandleDeleteBooking = this.HandleDeleteBooking.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchBookings()
+    }
+
+    HandleDeleteBooking(e) {
+        e.preventDefault();
+        // let bookingId = e.currentTarget.value
+        this.props.deleteBooking(e.currentTarget.value)
+        .then(() => this.props.fetchBookings())
     }
 
     render(){
@@ -18,29 +25,43 @@ class Trips extends React.Component{
         // debugger
         return (
             <div className="trip-container">
-                Trips
+                <div className="trip-category"> Trips </div>
+                <div className="trips-item">
+                    
                 {this.props.bookings.map ((booking,i) => (
                     <div className="bookings-container" key={i} >
-                        <div>
-                            <img src={booking.listingPhoto} alt="" className="indexphoto"/>
+                        <Link to={`/listings/${booking.listing.id}`}>
+                        <div className="trips-left">
+                            <img src={booking.listingPhoto} alt="" className="tripphoto"/>
                         </div>
-                        <div>
-                            Your host: {booking.host.first_name}
-                        </div>
-                        <div>Booking Id: {booking.id}</div>
-                        <div>
-                        number of guests: {booking.number_of_guests}
-                        </div>
-                        <div>
-                        Check-in-date:  {(new Date(booking.check_in_date)).toLocaleDateString("en-us", {month: 'long', day: 'numeric', weekday:'long', year: 'numeric'})}
-                        </div>
-                        <div>
-                        Check-out-date: {(new Date(booking.check_out_date)).toLocaleDateString("en-us", {month: 'long', day: 'numeric', weekday:'long', year: 'numeric'})}
+                        </Link>
+                         <Link to={`/listings/${booking.listing.id}`} className="trips-middle">
+                            <div className="trips-middle">
+                                <div style={{fontWeight: 'bold'}} className="trips-title">{booking.listing.title}</div>
+                                <div className="trip-address">{booking.listing.address}</div>
+                                <div className="trip-host">
+                                    Hosted by {booking.host.first_name}
+                                </div>
+                                <div className="trip-date">
+                                {(new Date(booking.check_in_date)).toLocaleDateString("en-us", {month: 'short', day: 'numeric'})}
+                                -{(new Date(booking.check_out_date)).toLocaleDateString("en-us", {month: 'short', day: 'numeric', year: 'numeric'})}
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                         </Link>
+                        <div className="trips-right">
+                            <button onClick={this.HandleDeleteBooking} value={booking.id}>
+                                Cancel
+                            <br/> 
+                                Booking
+                            </button>
                         </div>
                     </div>
                 )
             )
         }
+                </div>
             </div>
         )}
 

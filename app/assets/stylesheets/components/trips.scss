@@ -1,14 +1,84 @@
 .trip-container {
     margin-top: 80px;
     display: flex;
-    flex-direction: column;
     gap: 20px;
     width: 80%;
     margin-left: 10%;
+    flex-direction: column;
+    min-height: 70vh;
 }
 
 .bookings-container {
     display: flex;
+    // border: 1px solid black;
+    // border-radius: 5%;
+    // box-shadow: 1px 3px 1px 2px gray;
+}
+
+.tripphoto{
+    height: 100px;
+    width: 100px;
+    border-radius: 10%;
+    box-shadow: 3px 3px 2px 2px gray;
+}
+
+.trips-item{
+    // display: flex;
+    // flex-basis: 33.333333333%;
+    // flex-wrap: wrap;
+    // border: 2px lightcoral solid;
+    // justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    align-content: center;
+    row-gap: 40px;
+    margin-bottom: 40px;
+}
+
+.trips-right{
+    right: 0%;
+    // border: solid 2px red;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+}
+
+.trips-middle{
+    flex: 2;
+    align-content: center;
+    display: flex;
     flex-direction: column;
-    border: 2px solid red;
+    height: 100%;
+    margin-left: 3%;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: inherit
+}
+
+.trips-right > button {
+    align-self: center;
+}
+
+.trip-host,
+.trip-address,
+.trip-date {
+    font-size: 14px;
+}
+
+.trips-title {
+    font-size: 22px;
+}
+
+a, a:visited, a:hover, a:active {
+//   color: inherit;
+}
+
+.trips-middle:visited > a {
+    color: inherit;
+}
+
+.trip-category {
+    font-size: 40px;
+    margin-bottom: 5%;
 }
