@@ -11,9 +11,9 @@ const ListingsIndexItem = ({listing}) => (
                     <div className="listitle1">Entire place</div>
                     <div className="listitle2">{listing.title}</div>
                 </div>
-                <div>
+                {/* <div>
                     <AiOutlineHeart/>
-                </div>
+                </div> */}
             </div>
             <div className="lisdetails">
                 <div className="lisdetails1">
