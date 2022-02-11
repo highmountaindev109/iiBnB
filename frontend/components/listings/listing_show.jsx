@@ -10,6 +10,7 @@ import {AiOutlineCar} from "react-icons/ai/index"
 import Map from "../map/map";
 import MapContainer from "../map/map_container";
 import { AiFillStar } from "react-icons/ai";
+import BookingFormContainer from "../booking/booking_form_container";
 
 class Listing extends React.Component {
     constructor(props) {
@@ -46,6 +47,7 @@ class Listing extends React.Component {
 
     render() {
         const { listing } = this.props
+        // debugger
         if (!listing) return (<h1> Loading </h1>);
         return(
             <div className="lister">
@@ -186,7 +188,8 @@ class Listing extends React.Component {
                         </div>
 
                         <div className="listingright">
-                            <div> <img src={window.booking_url} alt="" className="booker"/></div>
+                            {/* <div> <img src={window.booking_url} alt="" className="booker"/></div> */}
+                            <BookingFormContainer />
                         </div>
                     </div>
                     {/* <div> Reviews Container</div> */}

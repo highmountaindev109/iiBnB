@@ -27,7 +27,8 @@ class Trips extends React.Component{
     noTrips(){
         // debugger
         return (this.props.bookings.length > 0) ? (   
-        <div className="trip-splash">            
+        <>
+        <div className="trip-splash"></div>        
         <div className="trips-item">
                 {this.props.bookings.map ((booking,i) => (
                     <div className="bookings-container" key={i} >
@@ -44,8 +45,8 @@ class Trips extends React.Component{
                                     Hosted by {booking.host.first_name}
                                 </div>
                                 <div className="trip-date">
-                                {(new Date(booking.check_in_date)).toLocaleDateString("en-us", {month: 'short', day: 'numeric'})}
-                                -{(new Date(booking.check_out_date)).toLocaleDateString("en-us", {month: 'short', day: 'numeric', year: 'numeric'})}
+                                {(new Date((new Date(booking.check_in_date)).getTime() + (new Date(booking.check_in_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric'} )}
+                                -{(new Date((new Date(booking.check_out_date)).getTime() + (new Date(booking.check_out_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric', year: 'numeric'} )}
                                 </div>
                                 <div>
                                 </div>
@@ -66,14 +67,14 @@ class Trips extends React.Component{
             )
         }
         </div>
-        </div>
+        </>
         ) : (
             <div className="no-trips trip-splash" id="notrips-splash">
-                <h1 className="flexible_text" id="trips-text">
-                You have no trips planned yet! 
-                <br />
-                Check out some listings to reserve for your next trip!
-                <br />
+                    <h1 id="trips-text">
+                    You have no trips planned yet! 
+                    <br />
+                    Check out some listings to reserve for your next trip!
+                    <br />
                 </h1>
                         <div className="button-wrapper" id="trip-button">
                             <Link to={`/listings`} className="flexible_button"> Let's go! </Link>

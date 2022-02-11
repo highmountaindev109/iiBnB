@@ -171,6 +171,9 @@
     font-weight: bolder;
     background-image: linear-gradient(to left, #a2ccb6, #d1eed6);
     text-shadow: black 2px;
+    background: rgba(0,0,0,.3);
+    width: 100%;
+    text-align: center;
 }
 
 #notrips-splash {
@@ -178,4 +181,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.opaque-text-bg {
+    background-color: beige;
+    border: 2px red solid;
+    height: auto;
 }

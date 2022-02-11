@@ -1,0 +1,108 @@
+.booking-form-container{
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.booking-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid black;
+    height: 50vh;
+}
+
+.booking-form-guest > label,
+.CIDF,
+.booking-form > label {
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.booking-form-guest > label{
+    padding-top: 10px;
+}
+
+.check-in-date-form{
+    display: flex;
+    flex-direction: column;
+    // border: 2px solid black;
+    // align-items: center;
+    justify-content: center;
+    height: 60px;
+    padding-top: 10px;
+    width: 50%;
+    // margin-left: 5%;
+}
+
+#cd1 {
+    // border-left: solid 1px black;
+    // border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    height: 5vw;
+}
+#cd2 {
+    height: 5vw;
+    border-left: solid 1px black;
+    border-bottom: solid 1px black;
+    // border-top: solid 1px black;
+    // border-right: solid 1px black;
+}
+
+.check-in-date-form > input {
+    border: none;
+    font-size: 16px;
+    height: 75%;
+    // width: 90%
+    margin-left: 5%;
+}
+
+.booking-form-date {
+    display: flex;
+    // justify-content: space-between;
+    // width: 80%;
+    width: 100%;
+}
+
+.booking-form-inner-box {
+    border: 3px solid gray;
+    // padding-bottom: 20px;
+    margin-bottom: 5%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    align-content: center;
+    justify-content: center;
+    width: 90%;
+    margin-left: 5%;
+
+}
+
+.booking-form-guest {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 75px;
+    // margin-left: 5%;
+    // border-bottom: solid 1px black;
+    // border-right: solid 1px black;
+    // border-left: solid 1px black;
+}
+
+.booking-form-guest > select {
+    border: none;
+    font-size: 16px;
+    height: 75%;
+    // padding-top: 10px;
+    margin-left: 2.5%;
+    // padding-bottom: 10px;
+}
+
+#booking-guests {
+    margin-left: 2.5%;
+}
