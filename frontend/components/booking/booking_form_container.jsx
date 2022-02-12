@@ -6,7 +6,7 @@ import BookingForm from "./booking_form";
 const mSTP = ({entities, session}) => {
     return({
         currentUser: entities.users[session.id],
-        listing: entities.listings
+        // listing: entities.listings
     })
 }
 

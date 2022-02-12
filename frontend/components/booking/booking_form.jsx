@@ -31,7 +31,7 @@ class BookingForm extends React.Component{
         debugger
         return(
             <div className="booking-form-container">
-                {/* {this.props.listing.price} */}
+                ${this.props.listing.price}/night
                 <form className="booking-form" onSubmit={this.handleSubmit}>
                     <div className="booking-form-inner-box">
                         <div className="booking-form-date">

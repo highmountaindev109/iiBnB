@@ -189,7 +189,7 @@ class Listing extends React.Component {
 
                         <div className="listingright">
                             {/* <div> <img src={window.booking_url} alt="" className="booker"/></div> */}
-                            <BookingFormContainer />
+                            <BookingFormContainer listing={listing}/>
                         </div>
                     </div>
                     {/* <div> Reviews Container</div> */}
