@@ -41,7 +41,7 @@ Future functionalities to implement in the near future include:
 I created a noTrips() function to account for when a user is not logged in to load a different view for the component. 
 It avoids throwing error when a user has no bookings/reservations made.
 
-```
+````
  noTrips(){
         return (this.props.bookings.length > 0) ? (   
         <>
@@ -93,6 +93,7 @@ It avoids throwing error when a user has no bookings/reservations made.
             </div>
         )
     }
+````    
 
 ### Booking/Reservation
 An issue I had was when a user tried to submit a booking/reservation form while not logged in, it would throw an error so I created this to bypass having no logged-in user.
