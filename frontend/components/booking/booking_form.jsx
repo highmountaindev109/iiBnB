@@ -5,10 +5,9 @@ import { AiFillStar } from "react-icons/ai";
 class BookingForm extends React.Component{
     constructor(props){
         super(props)
-        // debugger
         this.state = {
             listing_id: this.props.match.params.listingId,
-            guest_id: this.props.currentUser.id,
+            guest_id: '',
             check_in_date: '',
             check_out_date: '',
             number_of_guests: '1'
@@ -17,12 +16,28 @@ class BookingForm extends React.Component{
         this.checkOutDate = this.checkOutDate.bind(this)
     }
 
+    componentDidMount(){
+        if (this.props.currentUser) {
+            this.setState({guest_id: this.props.currentUser.id})
+        }
+    }
+
+    componentDidUpdate(prevProps){
+        if ((this.props.currentUser) && (this.props.currentUser !== prevProps.currentUser)) {
+            this.setState({guest_id:this.props.currentUser.id})
+        }
+    }
+
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
-        this.props.createBooking(this.state);
-        this.props.history.push(`/trips`)
-        window.location.reload(true)
+
+        if (this.props.currentUser) {
+            this.props.createBooking(this.state);
+            this.props.history.push(`/trips`)
+            window.location.reload(true)
+        } else {
+            this.props.signup()
+        }
     }
 
     update(field) {
@@ -42,6 +57,9 @@ class BookingForm extends React.Component{
                 <div className="booking-formbox">
                     <div className="bookingformtop">
                         <div className="bookingformtopleft">
+                            <div className="bookingformprice3">
+                            ${this.props.listing.price + Math.floor(Math.random() * 100)} {" "}
+                            </div>
                             <div className="bookingformprice">
                             ${this.props.listing.price} {" "}
                             </div>
@@ -50,7 +68,7 @@ class BookingForm extends React.Component{
                             </div>
                         </div>
                         <div className="bookingformtopright">
-                            <div className="rstar"><AiFillStar /> </div> 4.91 • 120 reviews
+                            <div className="rstar"><AiFillStar /> </div> 4.91 • {Math.floor(Math.random() * 100)} reviews
                         </div>
                     </div>
                     <form className="booking-form" onSubmit={this.handleSubmit}>
@@ -76,9 +94,8 @@ class BookingForm extends React.Component{
                                 </select>
                             </div>
                         </div>
-                        <button className="flexible_button" id="booking-button">Book me</button>
-                        <div> You won't be charged yet </div>
-                        <div> {this.checkOutDate()} </div>
+                        <button id="booking-button">RESERVE</button>
+                        <div className="disclaimer1"> Disclaimer: This is not a real reservation.</div>
                     </form>
                 </div>
 

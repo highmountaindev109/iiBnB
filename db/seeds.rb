@@ -10,6 +10,7 @@ require 'open-uri'
 
 User.destroy_all
 Listing.destroy_all
+Booking.destroy_all
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('listings')
 
@@ -346,6 +347,17 @@ listing18.photos.attach(io: listingphoto124, filename:'H5.jpg')
 listing18.photos.attach(io: listingphoto125, filename:'H6.jpg')
 listing18.photos.attach(io: listingphoto126, filename:'H7.jpg')
 
-
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "22-03-2023",check_out_date:"05-04-2023", listing_id:9 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "06-04-2023",check_out_date:"08-04-2023", listing_id:13 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "09-04-2023",check_out_date:"10-04-2023", listing_id:14 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "12-04-2023",check_out_date:"20-04-2023", listing_id:18 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "22-04-2023",check_out_date:"29-04-2023", listing_id:16 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "01-05-2023",check_out_date:"05-05-2023", listing_id:17 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "06-05-2023",check_out_date:"07-06-2023", listing_id:13 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "07-06-2023",check_out_date:"05-07-2023", listing_id:12 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "27-07-2023",check_out_date:"18-08-2023", listing_id:9 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "21-08-2023",check_out_date:"02-09-2023", listing_id:8 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "11-09-2023",check_out_date:"19-09-2023", listing_id:7 )
+Booking.create!(guest_id:1,number_of_guests: 2,check_in_date: "04-10-2023",check_out_date:"31-10-2023", listing_id:3 )
 
 

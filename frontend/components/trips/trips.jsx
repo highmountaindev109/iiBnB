@@ -88,7 +88,7 @@ class Trips extends React.Component{
 
     render(){
         if (this.state.loading) {
-            return (<div></div>)
+            return (<div className="lds-facebook"><div></div><div></div><div></div></div>)
         }
         // debugger
         return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -45,7 +46,7 @@ class LogInForm extends React.Component {
             email: "User@Fake.com", password: "123456"
         };
 
-        this.props.processForm(demoUser).then(this.props.closeModal());
+        this.props.processForm(demoUser).then(this.props.closeModal()).then(window.location.reload(true));
     }
 
     displayErrors() {
@@ -90,4 +91,4 @@ class LogInForm extends React.Component {
     
 }
 
-export default LogInForm
+export default LogInForm;

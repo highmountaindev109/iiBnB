@@ -48,7 +48,7 @@ class Listing extends React.Component {
     render() {
         const { listing } = this.props
         // debugger
-        if (!listing) return (<h1> Loading </h1>);
+        if (!listing) return (<div className="lds-facebook"><div></div><div></div><div></div></div>);
         return(
             <div className="lister">
                 <div className="listingshowpage">
@@ -56,9 +56,9 @@ class Listing extends React.Component {
                         <div className="title"> {listing.title}</div>
                         <div className="details">
                             <div className="rstarrate">
-                                5.00 <div className="rstar"><AiFillStar /> </div>
+                                <div className="rstar"><AiFillStar /> </div> 
                             </div> 
-                         • 420 Reviews • {listing.address} </div>
+                          4.91 • 420 Reviews • {listing.address} </div>
                     </div>
                     <div className="listingphotos"> 
                         <div className="photo1">

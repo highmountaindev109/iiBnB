@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { login, signup, clearErrors } from "../../actions/session_actions";
 import SignUpForm from "./signup_form";
 import { openModal, closeModal} from "../../actions/modal_action";
+import { withRouter } from "react-router-dom";
 
 const mSTP = (state) => ({
     errors: Object.values(state.errors.session),
@@ -15,4 +16,4 @@ const mDTP = dispatch => ({
     clearErrors: () => dispatch(clearErrors())
 })
 
-export default connect(mSTP, mDTP)(SignUpForm)
+export default withRouter(connect(mSTP, mDTP)(SignUpForm))
