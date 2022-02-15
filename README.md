@@ -36,6 +36,11 @@ Future functionalities to implement in the near future include:
 
 
 ## Snippets
+ 
+### Trips display
+I created a noTrips() function to account for when a user is not logged in to load a different view for the component. 
+It avoids throwing error when a user has no bookings/reservations made.
+
 ```
  noTrips(){
         return (this.props.bookings.length > 0) ? (   
@@ -89,5 +94,33 @@ Future functionalities to implement in the near future include:
         )
     }```
 
+### Booking/Reservation
+An issue I had was when a user tried to submit a booking/reservation form while not logged in, it would throw an error so I created this to bypass having no logged-in user.
+
+```
+    componentDidMount(){
+        if (this.props.currentUser) {
+            this.setState({guest_id: this.props.currentUser.id})
+        }
+    }
+
+    componentDidUpdate(prevProps){
+        if ((this.props.currentUser) && (this.props.currentUser !== prevProps.currentUser)) {
+            this.setState({guest_id:this.props.currentUser.id})
+        }
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+
+        if (this.props.currentUser) {
+            this.props.createBooking(this.state);
+            this.props.history.push(`/trips`)
+            window.location.reload(true)
+        } else {
+            this.props.signup()
+        }
+    }
+```
 ### ###
 
