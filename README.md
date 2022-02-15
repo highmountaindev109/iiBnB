@@ -1,7 +1,6 @@
 # FullStack Project: [iiBnB](https://iibnb.herokuapp.com/#/)
 
-<iframe src="https://giphy.com/embed/q9LEfaN1ZEHIUFotDC" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/q9LEfaN1ZEHIUFotDC">via GIPHY</a></p>
-
+<img width="1029" alt="Screen Shot 2021-12-02 at 10 43 18 PM" src="https://media.giphy.com/media/q9LEfaN1ZEHIUFotDC/giphy.gif">
 ## Overview
 
 iiBnB is an [AirBnB](https://www.airbnb.com/) clone, where users can view listings available to reserve and create listings to host. 
