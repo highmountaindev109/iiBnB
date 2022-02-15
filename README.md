@@ -1,6 +1,6 @@
 # FullStack Project: [iiBnB](https://iibnb.herokuapp.com/#/)
 
-[https://media.giphy.com/media/q9LEfaN1ZEHIUFotDC/giphy.gif]
+<iframe src="https://giphy.com/embed/q9LEfaN1ZEHIUFotDC" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/q9LEfaN1ZEHIUFotDC">via GIPHY</a></p>
 
 ## Overview
 
