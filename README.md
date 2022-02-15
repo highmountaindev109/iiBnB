@@ -92,7 +92,8 @@ It avoids throwing error when a user has no bookings/reservations made.
                         </div>
             </div>
         )
-    }```
+    }
+
 
 ### Booking/Reservation
 An issue I had was when a user tried to submit a booking/reservation form while not logged in, it would throw an error so I created this to bypass having no logged-in user.
@@ -121,6 +122,4 @@ An issue I had was when a user tried to submit a booking/reservation form while 
             this.props.signup()
         }
     }
-```
-### ###
 
