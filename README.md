@@ -36,7 +36,8 @@ Future functionalities to implement in the near future include:
 
 
 ## Snippets
-```noTrips(){
+```
+ noTrips(){
         return (this.props.bookings.length > 0) ? (   
         <>
             <div className="trip-splash"></div>        
