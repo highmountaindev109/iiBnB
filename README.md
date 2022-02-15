@@ -43,83 +43,83 @@ It avoids throwing error when a user has no bookings/reservations made.
 
 ````
  noTrips(){
-        return (this.props.bookings.length > 0) ? (   
-        <>
-            <div className="trip-splash"></div>        
-            <div className="trips-item">
-                    {this.props.bookings.map ((booking,i) => (
-                        <div className="bookings-container" key={i} >
-                            <Link to={`/listings/${booking.listing.id}`}>
-                            <div className="trips-left">
-                                <img src={booking.listingPhoto} alt="" className="tripphoto"/>
-                            </div>
-                            </Link>
-                            <Link to={`/listings/${booking.listing.id}`} className="trips-middle">
-                                <div className="trips-middle">
-                                    <div style={{fontWeight: 'bold'}} className="trips-title">{booking.listing.title}</div>
-                                    <div className="trip-address">{booking.listing.address}</div>
-                                    <div className="trip-host">
-                                        Hosted by {booking.host.first_name}
-                                    </div>
-                                    <div className="trip-date">
-                                        {(new Date((new Date(booking.check_in_date)).getTime() + (new Date(booking.check_in_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric'} )}
-                                        -{(new Date((new Date(booking.check_out_date)).getTime() + (new Date(booking.check_out_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric', year: 'numeric'} )}
-                                    </div>
-                                </div>
-                            </Link>
-                            <div className="trips-right">
-                                <button onClick={this.HandleDeleteBooking} value={booking.id}>
-                                    <MdFreeCancellation className="trip-del-btn"/> 
-                                    <div className="trip-del-btn-text">
-                                    Cancel<br/>Booking
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                        ))}
-            </div>
-        </>
-        ) : (
-            <div className="no-trips trip-splash" id="notrips-splash">
-                    <h1 id="trips-text">
-                    You have no trips planned yet! 
-                    <br />
-                    Check out some listings to reserve for your next trip!
-                    <br />
-                </h1>
-                        <div className="button-wrapper" id="trip-button">
-                            <Link to={`/listings`} className="flexible_button"> Let's go! </Link>
-                        </div>
-            </div>
-        )
-    }
+   return (this.props.bookings.length > 0) ? (   
+   <>
+       <div className="trip-splash"></div>        
+       <div className="trips-item">
+               {this.props.bookings.map ((booking,i) => (
+                   <div className="bookings-container" key={i} >
+                       <Link to={`/listings/${booking.listing.id}`}>
+                       <div className="trips-left">
+                           <img src={booking.listingPhoto} alt="" className="tripphoto"/>
+                       </div>
+                       </Link>
+                       <Link to={`/listings/${booking.listing.id}`} className="trips-middle">
+                           <div className="trips-middle">
+                               <div style={{fontWeight: 'bold'}} className="trips-title">{booking.listing.title}</div>
+                               <div className="trip-address">{booking.listing.address}</div>
+                               <div className="trip-host">
+                                   Hosted by {booking.host.first_name}
+                               </div>
+                               <div className="trip-date">
+                                   {(new Date((new Date(booking.check_in_date)).getTime() + (new Date(booking.check_in_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric'} )}
+                                   -{(new Date((new Date(booking.check_out_date)).getTime() + (new Date(booking.check_out_date)).getTimezoneOffset() * 60000)).toLocaleString("en-us", {month: 'short', day: 'numeric', year: 'numeric'} )}
+                               </div>
+                           </div>
+                       </Link>
+                       <div className="trips-right">
+                           <button onClick={this.HandleDeleteBooking} value={booking.id}>
+                               <MdFreeCancellation className="trip-del-btn"/> 
+                               <div className="trip-del-btn-text">
+                               Cancel<br/>Booking
+                               </div>
+                           </button>
+                       </div>
+                   </div>
+                   ))}
+       </div>
+   </>
+   ) : (
+       <div className="no-trips trip-splash" id="notrips-splash">
+               <h1 id="trips-text">
+               You have no trips planned yet! 
+               <br />
+               Check out some listings to reserve for your next trip!
+               <br />
+           </h1>
+                   <div className="button-wrapper" id="trip-button">
+                       <Link to={`/listings`} className="flexible_button"> Let's go! </Link>
+                   </div>
+       </div>
+   )
+  }
 ````    
 
 ### Booking/Reservation
 An issue I had was when a user tried to submit a booking/reservation form while not logged in, it would throw an error so I created this to bypass having no logged-in user.
 
 ```
-    componentDidMount(){
-        if (this.props.currentUser) {
-            this.setState({guest_id: this.props.currentUser.id})
-        }
-    }
+ componentDidMount(){
+     if (this.props.currentUser) {
+         this.setState({guest_id: this.props.currentUser.id})
+     }
+ }
 
-    componentDidUpdate(prevProps){
-        if ((this.props.currentUser) && (this.props.currentUser !== prevProps.currentUser)) {
-            this.setState({guest_id:this.props.currentUser.id})
-        }
-    }
+ componentDidUpdate(prevProps){
+     if ((this.props.currentUser) && (this.props.currentUser !== prevProps.currentUser)) {
+         this.setState({guest_id:this.props.currentUser.id})
+     }
+ }
 
-    handleSubmit(e) {
-        e.preventDefault();
+ handleSubmit(e) {
+     e.preventDefault();
 
-        if (this.props.currentUser) {
-            this.props.createBooking(this.state);
-            this.props.history.push(`/trips`)
-            window.location.reload(true)
-        } else {
-            this.props.signup()
-        }
-    }
+     if (this.props.currentUser) {
+         this.props.createBooking(this.state);
+         this.props.history.push(`/trips`)
+         window.location.reload(true)
+     } else {
+         this.props.signup()
+     }
+ }
 ```
