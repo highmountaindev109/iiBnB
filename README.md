@@ -1,6 +1,6 @@
 # FullStack Project: [iiBnB](https://iibnb.herokuapp.com/#/)
 
-https://media.giphy.com/media/q9LEfaN1ZEHIUFotDC/giphy.gif
+[https://media.giphy.com/media/q9LEfaN1ZEHIUFotDC/giphy.gif]
 
 ## Overview
 
