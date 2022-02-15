@@ -88,7 +88,7 @@ class Trips extends React.Component{
 
     render(){
         if (this.state.loading) {
-            return (<div className="lds-facebook"><div></div><div></div><div></div></div>)
+            return (<div style={{height: "100vh" ,width: "50vw"}}></div>)
         }
         // debugger
         return (

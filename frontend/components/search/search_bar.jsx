@@ -45,18 +45,27 @@ class SearchBar extends React.Component {
         return(
             <div className="navbar_search_container">
                 <form className="search_form" onSubmit={this.handleSubmit}>
-                    <input
-                        type="text"
-                        onChange={this.handleUpdate("query")}
-                        className="search_bar_item"
-                        placeholder="Try New York City"
-                        id="autocomplete"
-                    />
+                    <div className="whole-search-bar">
+                        <div className="search_bar_container">
+                            <label id="search-label">Location </label>
+                            <input
+                                type="text"
+                                onChange={this.handleUpdate("query")}
+                                className="search_bar_item"
+                                placeholder="Try New York City"
+                                id="autocomplete"
+                            />
+                        </div>
 
-                    <button
-                        type="submit"
-                        className="icon"
-                    > <FaSearch /> </button>
+                        <button
+                            type="submit"
+                            className="search-icon"
+                        > <FaSearch className="fasearch" /> <div>
+                            Search 
+                            </div>
+                            </button>
+
+                    </div>
 
                 </form>
             </div>
