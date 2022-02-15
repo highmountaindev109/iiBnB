@@ -1,12 +1,12 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaInstagram, FaSquarespace } from "react-icons/fa/index"
+import { FaGithub, FaLinkedin, FaAngellist, FaSquarespace } from "react-icons/fa/index"
 const Footer = () => {
 
     return (
         <footer className="footer">
             <div className="footer-container">
-                <div className="about-me">
-                    <h2>About Me</h2>
+                {/* <div className="about-me"> */}
+                    {/* <h2>About Me</h2>
                     <ul>
                         <li>Alex Wong</li>
                         <li>New York</li>
@@ -33,14 +33,18 @@ const Footer = () => {
                             <li>Celadon City</li>
                             <li>Fuschia City</li>
                         </ul>
-                </div>
+                </div> */}
                 <div className="socials">
-                    <h2>Socials</h2>
+                    <p>
+                        Socials
+                    </p>
                     <ul>
-                        <li><FaLinkedin/></li>
-                        <li><FaGithub/></li>
-                        <li><FaSquarespace/></li>
-                        <li><FaInstagram/></li>
+                        <a href="https://www.linkedin.com/in/alwong191/">
+                            <FaLinkedin/>
+                        </a>
+                        <a href="https://github.com/AlexDoes"><FaGithub/></a>
+                        {/* <a href="#"><FaSquarespace/></a> */}
+                        <a href="https://angel.co/u/awong191"><FaAngellist/></a>
                     </ul>
                 </div>
             </div>

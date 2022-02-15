@@ -6,12 +6,14 @@
 
 .footer-container {
     // border: 2px solid green;
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     // left: 0;
     font-family: 'Montserrat', sans-serif;
-    width: 83%;
+    width: 100%;
     // margin-left: 5%;
+    // border: 2px yellow solid;
+    border-top: 1px solid sandybrown;
 
 }
 
@@ -19,7 +21,7 @@
 .filler2 > h2,
 .socials > h2,
 .about-me > h2 {
-    font-size: 17px;
+    font-size: 28px;
     font-weight: 900;
     padding-top: 20px;
     text-shadow: 1px 1px linear-gradient(to left, #ccffff, #1a9fec, #85b5eb);
@@ -32,14 +34,20 @@
 .filler2,
 .socials,
 .about-me  {
-    height: 200px;
+    // height: 200px;
     color: sandybrown;
     display: flex;
-    flex-direction: column;
-    font-size: 17px;
-    justify-content: space-between;
-    padding: 0px 5px 5px 5px;
-    
+    flex-direction: row;
+    font-size: 32px;
+    // justify-content: space-between;
+    // padding: 0px 5px 5px 5px;
+    align-content: center;
+    // padding-bottom: 40px;
+    // width: 80%;
+    // border: 2px solid green;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100px;
 }
 
 .filler1 > ul,
@@ -47,18 +55,30 @@
 .socials > ul,
 .about-me > ul  {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
-    height: 80%;
-    padding-top: 10%;
-    min-width: 160px;
+    height: 100%;
+    // padding-top: 10%;
+    // min-width: 160px;
+    align-items: center;
+    align-content: center;
 }
 
 .socials > ul {
-    
+    width: 80%;
+    // border: 2px solid red;
+    display: flex;
+    align-items: center;
 }
 .socials > ul > li {
-    height: 20px;
+    // height: 20px;
     // justify-content: center;
     // align-content: center;
+    font-size: 30px;
+}
+
+.socials > p {
+    font-weight: 900;
+    margin-left: 5%;
+    margin-right: 5%;
 }

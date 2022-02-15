@@ -110,7 +110,7 @@
 .whole-search-bar{
     display: flex;
     border: 1px solid lightgray;
-    border-radius: 20px;
+    border-radius: 30px;
     align-items: center;
     gap: 10px;
     overflow: hidden;
@@ -157,7 +157,8 @@
 
 .search_bar_container:hover {
     border: 1px solid lightgray;
-    border-radius: 20px;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
 .search-icon:hover{
