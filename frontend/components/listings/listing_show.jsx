@@ -35,7 +35,6 @@ class Listing extends React.Component {
         if (Object.keys(this.props.user).length === 0) {
             return (<> </>)
         } else {
-            debugger
             if (this.props.user && (this.props.user[0].id === this.props.listing.host_id)){
                 return (                                
                     <Link to={`${this.props.listing.id}/edit/`} className="editbutton"> Edit Listing</Link>
