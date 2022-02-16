@@ -48,7 +48,7 @@ class Listing extends React.Component {
     render() {
         const { listing } = this.props
         // debugger
-        if (!listing) return (<div className="lds-facebook"><div></div><div></div><div></div></div>);
+        if (!listing) return (<div style={{height: "100vh" ,width: "50vw"}}></div>);
         return(
             <div className="lister">
                 <div className="listingshowpage">
