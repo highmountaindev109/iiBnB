@@ -39,12 +39,12 @@ const Footer = () => {
                         Socials
                     </p>
                     <ul>
-                        <a href="https://www.linkedin.com/in/alwong191/">
+                        <a href="https://www.linkedin.com/in/alwong191/" target="_blank">
                             <FaLinkedin/>
                         </a>
-                        <a href="https://github.com/AlexDoes"><FaGithub/></a>
+                        <a href="https://github.com/AlexDoes" target="_blank"><FaGithub/></a>
                         {/* <a href="#"><FaSquarespace/></a> */}
-                        <a href="https://angel.co/u/awong191"><FaAngellist/></a>
+                        <a href="https://angel.co/u/awong191"target="_blank"><FaAngellist/></a>
                     </ul>
                 </div>
             </div>
