@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="image" property="og:image" content="<%= image_url('metaSS.png') %>">
+    <meta property="og:title" content="iiBnB" />
+    <meta property="og:image" content="<%= image_url('metascreenshot.png') %>">
     <%= favicon_link_tag image_url('iibi.png') %>
     <title>IiBnB</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:description"
+       content="A full stack clone of the popular site AirBnB utilizing React/Redux and Ruby on Rails."
+    />
+     <meta property="og:url"
+       content="http://iibnb.herokuapp.com/"
+     />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
