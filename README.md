@@ -27,7 +27,7 @@ This project will be implemented with the following technologies:
 <li> Google Maps API for map functionality and search autocomplete functionality
 </li>                      
 
-## Future implementations/ work in progress
+## Future implementations/ work in progress                  
 This project is still far from complete.
 Future functionalities to implement in the near future include:
 <li> A User profile to manage listings and other features in an intuitive manner
