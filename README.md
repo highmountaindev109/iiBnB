@@ -16,7 +16,7 @@ In iiBi, users will be able to :
 <li> Scroll around the map to load more listings within bound </li>
 <li> Make reservations/bookings for trips </li>                
               
- ## Technologies, Libraries, APIs               
+ ## Technologies, Libraries, APIs                             
 This project will be implemented with the following technologies: 
 <li> Ruby on Rails framework
 <li> Webpack to bundle the source JavaScript code
