@@ -9,7 +9,7 @@ The listings have information pertaining to the content of the listing so users 
                  
 ## Functionality & MVPs
                                          
-In iiBi, users will be able to :
+In iiBi, users will be able to :         
 <li> Sign up and sign into an account</li>
 <li> View, create, and edit listings </li>
 <li> Search an area for available listings </li>
