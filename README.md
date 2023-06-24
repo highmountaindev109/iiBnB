@@ -8,7 +8,7 @@ The user is able to navigate the site through the search bar and clicking on res
 The listings have information pertaining to the content of the listing so users can view details about the place before reserving.
                                     
 ## Functionality & MVPs
-                                         
+                                                              
 In iiBi, users will be able to :         
 <li> Sign up and sign into an account</li>
 <li> View, create, and edit listings </li>
