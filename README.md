@@ -15,7 +15,7 @@ In iiBi, users will be able to :
 <li> Search an area for available listings </li>
 <li> Scroll around the map to load more listings within bound </li>
 <li> Make reservations/bookings for trips </li>
-
+              
  ## Technologies, Libraries, APIs
 This project will be implemented with the following technologies: 
 <li> Ruby on Rails framework
