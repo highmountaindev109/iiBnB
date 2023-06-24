@@ -6,7 +6,7 @@
 iiBnB is an [AirBnB](https://www.airbnb.com/) clone, where users can view listings available to reserve and create listings to host. 
 The user is able to navigate the site through the search bar and clicking on results provided by the search as well as scrolling through the map.
 The listings have information pertaining to the content of the listing so users can view details about the place before reserving.
-                                    
+                                                                
 ## Functionality & MVPs
                                                               
 In iiBi, users will be able to :         
