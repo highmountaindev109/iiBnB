@@ -25,7 +25,7 @@ This project will be implemented with the following technologies:
 <li> AWS S3 Media Storage
 <li> React, Redux, and jQuery to handle the state of the front-end
 <li> Google Maps API for map functionality and search autocomplete functionality
-</li>
+</li>                      
 
 ## Future implementations/ work in progress
 This project is still far from complete.
