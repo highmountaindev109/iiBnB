@@ -37,7 +37,7 @@ Future functionalities to implement in the near future include:
 
 ## Snippets
  
-### Trips display
+### Trips display                  
 I created a noTrips() function to account for when a user is not logged in to load a different view for the component. 
 It avoids throwing error when a user has no bookings/reservations made.
 
