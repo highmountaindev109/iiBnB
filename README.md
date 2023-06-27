@@ -13,7 +13,7 @@ In iiBi, users will be able to :
 <li> Sign up and sign into an account</li>     
 <li> View, create, and edit listings </li>            
 <li> Search an area for available listings </li>
-<li> Scroll around the map to load more listings within bound </li>
+<li> Scroll around the map to load more listings within bound </li>              
 <li> Make reservations/bookings for trips </li>                
               
  ## Technologies, Libraries, APIs                                                
