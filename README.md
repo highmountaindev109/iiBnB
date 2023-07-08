@@ -22,7 +22,7 @@ This project will be implemented with the following technologies:
 <li> Webpack to bundle the source JavaScript code
 <li> Babel to transpile JavaScript for older browsers
 <li> PostgresSQL Database
-<li> AWS S3 Media Storage                      
+<li> AWS S3 Media Storage                                    
 <li> React, Redux, and jQuery to handle the state of the front-end
 <li> Google Maps API for map functionality and search autocomplete functionality
 </li>                      
