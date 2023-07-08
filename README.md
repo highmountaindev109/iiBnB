@@ -31,7 +31,7 @@ This project will be implemented with the following technologies:
 This project is still far from complete.
 Future functionalities to implement in the near future include:
 <li> A User profile to manage listings and other features in an intuitive manner
-<li> Being able to view, create, edit, and delete reviews
+<li> Being able to view, create, edit, and delete reviews       
 
                        
 
